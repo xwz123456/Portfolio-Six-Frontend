@@ -1,0 +1,146 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* 页面布局 */
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    width: 50%;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Net Worth 趋势图 */
+#net-worth {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#net-worth canvas {
+    width: 100%;
+    height: 300px;
+}
+
+/* Holdings 表格 */
+#holdings {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#data-table th, #data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#data-table th {
+    background-color: #f2f2f2;
+}
+
+/* Asset Overview */
+#asset-overview {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.asset-category {
+    margin-bottom: 20px;
+}
+
+.asset-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.asset-category p {
+    font-size: 1.1rem;
+}
+
+/* FAQ 部分 */
+#faq {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#faq-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#faq-table th, #faq-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#faq-table th {
+    background-color: #f2f2f2;
+}
+
+/* 开屏页面样式 */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 1s ease-out;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 引入趋势图库 -->
+</head>
+<body>
+    <!-- 开屏 Logo 页面 -->
+    <div class="splash-screen" id="splash-screen">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">  <!-- 请确保你有一个 logo.png 图片 -->
+        </div>
+    </div>
+
+    <!-- 主题页 Dashboard -->
+    <div class="dashboard" id="dashboard" style="opacity: 0;">
+        <header>
+            <h1>Financial Portfolio</h1>
+            <!-- BEGIN: Navigation Bar -->
+            <nav style="display: flex; align-items: center;">
+                <div class="nav-logo" style="margin-right: auto;">
+                    <img src="logo.jpg" alt="Logo">
+                </div>
+                <div class="nav-title" style="margin-right: 20px;">
+                    <h1>Financial Portfolio</h1>
+                </div>
+                <div class="nav-search">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </nav>
+            <!-- END: Navigation Bar -->
+        </header>
+
+        <div class="main-content">
+
+        <!-- 第三列：Quote Lookup + Gainers + Losers + 图片 -->
+            <div class="third-column">
+                <!-- 搜索输入框 -->
+                <section id="quote-lookup">
+                    <input type="text" placeholder="Quote Lookup" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+                </section>
+
+            <!-- Top Gainers -->
+                <section id="top-gainers" style="margin-top: 20px;">
+                    <h2>Top Gainers</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Price</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NVDA</td>
+                                <td>$12345</td>
+                                <td style="color: red;">+30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: red;">+30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: red;">+30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Top Losers -->
+                <section id="top-losers" style="margin-top: 20px;">
+                    <h2>Top Losers</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Price</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NVDA</td>
+                                <td>$12345</td>
+                                <td style="color: green;">−30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: green;">−30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: green;">−30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Logo 图片 -->
+                <section id="bottom-image" style="margin-top: 20px; text-align: center;">
+                    <img src="logo.jpg" alt="Bottom Logo" style="max-width: 100%; border-radius: 8px;">
+                </section>
+            </div>
+
+
+
+            <!-- 第一列：Net Worth 和 Holdings -->
+            <div class="left-column">
+                <section id="net-worth">
+                    <h2>Net Worth</h2>
+                    <canvas id="net-worth-chart"></canvas> <!-- 趋势图 -->
+                </section>
+
+                <section id="holdings"></section>
+                    <h2>Holdings</h2>
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Today's Price</th>
+                                <th>Change (%)</th>
+                                <th>Total Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 表格数据由JavaScript动态填充 -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+
+            <!-- 第二列：Asset Overview 和 FAQ -->
+            <div class="right-column">
+                <section id="asset-overview">
+                    <h2>Asset Overview</h2>
+                    <div class="asset-category" id="stocks">
+                        <h3>Stocks</h3>
+                        <p>Total: $500,000</p>
+                    </div>
+                    <div class="asset-category" id="bonds">
+                        <h3>Bonds</h3>
+                        <p>Total: $200,000</p>
+                    </div>
+                    <div class="asset-category" id="etf">
+                        <h3>ETFs</h3>
+                        <p>Total: $150,000</p>
+                    </div>
+                    <div class="asset-category" id="crypto">
+                        <h3>Cryptocurrencies</h3>
+                        <p>Total: $100,000</p>
+                    </div>
+                </section>
+
+                <section id="faq">
+                    <h2>FAQ</h2>
+                    <table id="faq-table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Answer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>What is a portfolio?</td>
+                                <td>A portfolio is a collection of financial assets like stocks, bonds, and cash.</td>
+                            </tr>
+                            <tr>
+                                <td>How is net worth calculated?</td>
+                                <td>Net worth is the difference between your assets and liabilities.</td>
+                            </tr>
+                            <!-- 可以根据需求添加更多的问答 -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <!-- 请在这里加入【第三列】 -->
+
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
