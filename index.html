@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Financial Portfolio</title>
+      
+        <!-- Font Awesome 图标库 -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 引入趋势图库 -->
+    </head>   
+<body>
+    <!-- 开屏 Logo 页面 -->
+    <div class="splash-screen" id="splash-screen">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">  <!-- 请确保你有一个 logo.png 图片 -->
+        </div>
+    </div>
+
+    <!-- 主题页 Dashboard -->
+    <div class="dashboard" id="dashboard" style="opacity: 0;">
+        <header>
+            <div class="top-nav">
+              <div class="nav-left" style="display: flex; align-items: center;">
+                <img src="logo_6.png" alt="Logo" style="height: 120px; margin-right: 15px;" />
+                <h1>Financial Portfolio</h1>
+              </div>
+          
+              <input type="text" class="news-search" placeholder="Search for news" />
+          
+              <div class="icons">
+                <button id="toggle-theme">Toggle Theme</button>
+                <span class="bell">🔔</span>
+                <span class="user">👤 Donald Trump</span>
+                <span class="gear">⚙️</span>
+              </div>
+            </div>
+          </header>
+          
+
+        <div class="main-content">
+
+        <!-- 第一列：Quote Lookup + Gainers + Losers + 图片 -->
+            <div class="third-column">
+                <!-- 搜索输入框 -->
+                <section id="quote-lookup">
+                    <input type="text" placeholder="Quote Lookup" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+                </section>
+
+            <!-- Top Gainers -->
+                <section id="top-gainers" style="margin-top: 20px;">
+                    <h2>Top Gainers</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Price</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NVDA</td>
+                                <td>$12345</td>
+                                <td style="color: red;">+30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: red;">+30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: red;">+30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Top Losers -->
+                <section id="top-losers" style="margin-top: 20px;">
+                    <h2>Top Losers</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Price</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NVDA</td>
+                                <td>$12345</td>
+                                <td style="color: green;">−30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: green;">−30%</td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td>$12345</td>
+                                <td style="color: green;">−30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- 广告位图片 -->
+                <section id="bottom-image">
+                    <img src="ad_pic.png" alt="Bottom Logo" />
+                </section>
+            </div>
+
+            <!-- 第二列：Net Worth 和 Holdings -->
+            <div class="left-column">
+                <section id="net-worth">
+                    <h2>Net Worth</h2>
+                    <canvas id="net-worth-chart"></canvas> <!-- 趋势图 -->
+                </section>
+
+                <section id="holdings" class="holdings">
+                    <h2>Holdings</h2>
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                            <th>Asset</th>
+                            <th>Buy Price</th>
+                            <th>Current Price</th>
+                            <th>Change (%)</th>
+                            <th>Total Value</th>
+                            <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <!-- 表格数据由JavaScript动态填充 -->
+                        </tbody>
+                    </table>
+                </section>                  
+            </div>
+
+            <!-- 第三列：Asset Overview 和 FAQ -->
+            <div class="right-column">
+                <!-- 修改！！！ -->
+                <section class="asset-overview">
+                    <h2>Asset Overview</h2>
+                    <div class="overview-grid">
+                        <div class="asset" data-type="stock">
+                            STOCK
+                            <div class="value">+ 34.77%</div>
+                            <div class="total_value">$ 6586.26</div>
+                        </div>
+                        <div class="asset" data-type="bond">
+                            BOND
+                            <div class="value">+ 5.46%</div>
+                            <div class="total_value">$ 7483.53</div>
+                        </div>
+                        <div class="asset" data-type="etf">
+                            ETFs
+                            <div class="value">+ 67.77%</div>
+                            <div class="total_value">$ 8535.52</div>
+                        </div>
+                        <div class="asset" data-type="crypto">
+                            CRYPTO
+                            <div class="value">- 23.42%</div>
+                            <div class="total_value">$ 34535.66</div>
+                        </div>
+                    </div>
+                </section>
+                <!--修改！！！！  -->
+
+                <!-- FAQ部分 -->
+                <section class="faq">
+                    <h2 class="faq_title">Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                      <div class="faq-item">
+                        <div class="question">
+                          Why shouldn't we trust atoms?
+                        </div>
+                        <div class="answer">Because they make up everything.</div>
+                      </div>
+                  
+                      <div class="faq-item">
+                        <div class="question">
+                          What do you call someone with no body and no nose? 
+                        </div>
+                        <div class="answer">Nobody knows.</div>
+                      </div>
+                  
+                      <div class="faq-item">
+                        <div class="question">
+                          How many tickles to tickle an octopus?
+                        </div>
+                        <div class="answer">Tentickles.</div>
+                      </div>
+                    </div>
+                </section>
+
+
+
+
+
+                                  
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
