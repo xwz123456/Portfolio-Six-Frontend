@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: #00233d;
     margin: 20px;
 }
 
@@ -19,8 +19,65 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 40px;
-}
+    padding: 5px;
+    background-color: #00233d;
+  }
+  
+  /* 新导航栏主容器 */
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 保证响应式布局 */
+  }
+  
+  /* 左边 logo 和标题 */
+  .top-nav h1 {
+    font-size: 38px;
+    margin: 0;
+    padding-right: 30px;
+    color: #ffffff;
+  }
+  
+  /* 新闻搜索框样式 */
+  .news-search {
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  /* 图标区域样式 */
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icons span,
+  .icons button {
+    margin-left: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .icons button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    transition: background-color 0.3s ease;
+  }
+  
+  .icons button:hover {
+    background-color: #ddd;
+  }
+
+  .user {
+    color: #ffffff;
+  }
+  
+
 
 h1 {
     font-size: 2.5rem;
@@ -42,10 +99,77 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* Gainers & Losers 样式更新，使用 ID 选择器匹配 HTML */
+#top-gainers, #top-losers {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff8ed;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  /* 标题样式修正为 h2 */
+  #top-gainers h2 {
+    color: #ffffff;
+    background-color: #6f1c1c;
+    text-align: center;
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+  
+  #top-losers h2 {
+    color: #ffffff;
+    background-color: #2f6237;
+    text-align: center;
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+  
+  /* 表格样式补充 */
+  #top-gainers table,
+  #top-losers table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #top-gainers th, #top-losers th,
+  #top-gainers td, #top-losers td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  #top-gainers th, #top-losers th {
+    background-color: #fff8ed;
+    font-weight: bold;
+  }
+  
+
+
+  /* 广告位图片 */
+  #bottom-image {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #bottom-image img {
+    width: 300px;              /* 固定宽度 */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
 /* Net Worth 趋势图 */
 #net-worth {
-    background-color: #fff;
+    background-color: #224977;
     padding: 20px;
+    color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -55,75 +179,168 @@ h2 {
     height: 300px;
 }
 
-/* Holdings 表格 */
-#holdings {
-    margin-top: 20px;
-    background-color: #fff;
+/* Holdings */
+.holdings {
+    background-color: #224977;
+    color: white;
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-#data-table th, #data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-#data-table th {
-    background-color: #f2f2f2;
-}
-
-/* Asset Overview */
-#asset-overview {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.asset-category {
     margin-bottom: 20px;
-}
-
-.asset-category h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-
-.asset-category p {
-    font-size: 1.1rem;
-}
-
-/* FAQ 部分 */
-#faq {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#faq-table {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .holdings h2 {
+    margin-bottom: 16px;
+  }
+  
+  .holdings table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-}
-
-#faq-table th, #faq-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+  }
+  
+  .holdings th, .holdings td {
+    padding: 12px;
     text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* 可选：为正负变化添加颜色 */
+  .positive {
+    color: lightgreen;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
+/* Asset Overview */
+/* Asset Overview修改！！！ */
+.asset-overview {
+  background-color: #224977;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-#faq-table th {
-    background-color: #f2f2f2;
+.asset-overview h2 {
+  text-align: center;
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.asset {
+  background-color: #fff8ed;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #00233d;
+  transition: transform 0.3s ease;
+}
+
+.asset:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.asset .value {
+  font-size: 18px;
+  margin-top: 8px;
+  font-weight: normal;
+  color: #2ecc71;
+}
+
+.asset .total_value {
+  font-size: 18px;
+  margin-top: 8px;
+  font-weight: normal;
+  color: #224977;
+}
+
+/* 根据资产类型显示不同颜色（可选增强） */
+.asset[data-type="crypto"] .value {
+  color: #e74c3c;
+}
+
+.asset[data-type="stock"] .value,
+.asset[data-type="etf"] .value,
+.asset[data-type="bond"] .value {
+  color: #2ecc71;
+}
+/* 
+/* FAQ */
+.faq {
+    background-color: #224977;
+    padding: 20px;
+    border-radius: 15px;
+  }
+.faq_title {
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+}
+  
+.faq-list > div {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+
+.faq-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.faq-item .question {
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item .toggle-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.faq-item .answer {
+  padding: 0 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item.open .answer {
+  padding-top: 10px;
+}  
+
+
+
+
+
+
+
+
+
 
 /* 开屏页面样式 */
 .splash-screen {

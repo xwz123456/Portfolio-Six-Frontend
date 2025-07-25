@@ -1,3 +1,4 @@
+// 开屏效果
 window.onload = function() {
     // 获取元素
     const splashScreen = document.getElementById('splash-screen');
@@ -14,47 +15,31 @@ window.onload = function() {
     });
 };
 
-// 模拟的资产数据
-const assetData = {
-    stock: [
-        { name: 'Apple', priceToday: 145.3, priceYesterday: 140.0, quantity: 50 },
-        { name: 'Tesla', priceToday: 625.0, priceYesterday: 600.0, quantity: 30 }
-    ],
-    fund: [
-        { name: 'Vanguard', priceToday: 32.5, priceYesterday: 31.5, quantity: 100 },
-        { name: 'Fidelity', priceToday: 112.0, priceYesterday: 110.0, quantity: 60 }
-    ],
-    crypto: [
-        { name: 'Bitcoin', priceToday: 47000, priceYesterday: 46000, quantity: 2 },
-        { name: 'Ethereum', priceToday: 3300, priceYesterday: 3100, quantity: 10 }
-    ],
-    bond: [
-        { name: 'Government Bond', priceToday: 102.0, priceYesterday: 101.5, quantity: 200 },
-        { name: 'Corporate Bond', priceToday: 110.0, priceYesterday: 108.0, quantity: 150 }
-    ]
-};
-
-// 显示资产表格
-function updateHoldingsTable(assetType) {
-    const tableBody = document.querySelector("#data-table tbody");
-    tableBody.innerHTML = '';  // 清空当前表格内容
-
-    const assets = assetData[assetType];
-    assets.forEach(asset => {
-        const priceChange = ((asset.priceToday - asset.priceYesterday) / asset.priceYesterday * 100).toFixed(2);
-        const totalValue = (asset.priceToday * asset.quantity).toFixed(2);
-
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${asset.name}</td>
-            <td>${asset.priceToday}</td>
-            <td>${priceChange}%</td>
-            <td>${totalValue}</td>
-        `;
-        tableBody.appendChild(row);
-    });
-}
-
+// 动态填充 Holdings 表格数据
+const holdingsData = [
+    { name: 'NVDA', b_price: 65.44, c_price: 42.65, charge: -25.32, total: 23456, time: '23453' },
+    { name: 'TSLA', b_price: 55.34, c_price: 76.53, charge: 34.43, total: 345346, time: '34534543' },
+    { name: 'AAPL', b_price: 42.55, c_price: 75.33, charge: 45.64, total: 345345, time: '345345345' },
+    { name: 'O2HO', b_price: 53.24, c_price: 43.56, charge: -15.56, total: 45644, time: '234234' },
+    { name: 'AMZN', b_price: 67.25, c_price: 76.43, charge: 64.24, total: 45644, time: '234234' },
+    { name: 'RHM',  b_price: 55.24, c_price: 45.74, charge: -56.35, total: 34534, time: '234234' }
+  ];
+  
+  const tbody = document.querySelector('#data-table tbody');
+  holdingsData.forEach(item => {
+    const tr = document.createElement('tr');
+    const changeClass = item.charge >= 0 ? 'positive' : 'negative';
+    tr.innerHTML = `
+      <td>${item.name}</td>
+      <td>${item.b_price.toFixed(2)}</td>
+      <td>${item.c_price.toFixed(2)}</td>
+      <td class="${changeClass}">${item.charge.toFixed(2)}%</td>
+      <td>${item.total}</td>
+      <td>${item.time}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+  
 // 初始化趋势图
 const ctx = document.getElementById('net-worth-chart').getContext('2d');
 const netWorthChart = new Chart(ctx, {
@@ -85,3 +70,19 @@ updateHoldingsTable('stock');
 function showAsset(assetType) {
     updateHoldingsTable(assetType);
 }
+
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.question');
+  const answer = item.querySelector('.answer');
+
+  question.addEventListener('click', () => {
+    item.classList.toggle('open');
+    if (item.classList.contains('open')) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.style.maxHeight = '0';
+    }
+  });
+});
+
