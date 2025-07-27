@@ -180,6 +180,29 @@ h2 {
 }
 
 /* Holdings */
+
+/* 设置标题和下拉框并排显示 */
+.holdings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* 下拉框样式 */
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#type-select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
 .holdings {
     background-color: #224977;
     color: white;
@@ -212,9 +235,8 @@ h2 {
   .negative {
     color: red;
   }
-  
+ 
 /* Asset Overview */
-/* Asset Overview修改！！！ */
 .asset-overview {
   background-color: #224977;
   border-radius: 15px;

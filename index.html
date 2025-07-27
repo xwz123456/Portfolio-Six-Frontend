@@ -130,23 +130,35 @@
                 </section>
 
                 <section id="holdings" class="holdings">
-                    <h2>Holdings</h2>
+                    <div class="holdings-header">
+                      <h2>Holdings</h2>
+                  
+                      <!-- Type 下拉选择框 -->
+                      <div class="filter-container">
+                        <label for="type-select">Type:</label>
+                        <select id="type-select">
+                          <option value="all">All</option>
+                        </select>
+                      </div>
+                    </div>
+                  
                     <table id="data-table">
-                        <thead>
-                            <tr>
-                            <th>Asset</th>
-                            <th>Buy Price</th>
-                            <th>Current Price</th>
-                            <th>Change (%)</th>
-                            <th>Total Value</th>
-                            <th>Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                      <thead>
+                        <tr>
+                          <th>Asset</th>
+                          <th>Buy Price</th>
+                          <th>Current Price</th>
+                          <th>Change (%)</th>
+                          <th>Total Value</th>
+                          <th>Time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
                         <!-- 表格数据由JavaScript动态填充 -->
-                        </tbody>
+                      </tbody>
                     </table>
-                </section>                  
+                  </section>                  
+                                    
             </div>
 
             <!-- 第三列：Asset Overview 和 FAQ -->
@@ -154,30 +166,11 @@
                 <!-- 修改！！！ -->
                 <section class="asset-overview">
                     <h2>Asset Overview</h2>
-                    <div class="overview-grid">
-                        <div class="asset" data-type="stock">
-                            STOCK
-                            <div class="value">+ 34.77%</div>
-                            <div class="total_value">$ 6586.26</div>
-                        </div>
-                        <div class="asset" data-type="bond">
-                            BOND
-                            <div class="value">+ 5.46%</div>
-                            <div class="total_value">$ 7483.53</div>
-                        </div>
-                        <div class="asset" data-type="etf">
-                            ETFs
-                            <div class="value">+ 67.77%</div>
-                            <div class="total_value">$ 8535.52</div>
-                        </div>
-                        <div class="asset" data-type="crypto">
-                            CRYPTO
-                            <div class="value">- 23.42%</div>
-                            <div class="total_value">$ 34535.66</div>
-                        </div>
+                    <div class="overview-grid" id="asset-overview-grid">
+                      <!-- 动态插入 .asset 项 -->
                     </div>
-                </section>
-                <!--修改！！！！  -->
+                  </section>
+                  
 
                 <!-- FAQ部分 -->
                 <section class="faq">
@@ -205,12 +198,6 @@
                       </div>
                     </div>
                 </section>
-
-
-
-
-
-                                  
             </div>
         </div>
     </div>
