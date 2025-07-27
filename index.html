@@ -43,77 +43,50 @@
               </div>
             </div>
           </header>
-          
-
         <div class="main-content">
-
-        <!-- 第一列：Quote Lookup + Gainers + Losers + 图片 -->
-            <div class="third-column">
+            <!-- 左侧：Quote Lookup + Gainers + Losers + 图片 -->
+            <div class="left-column">
                 <!-- 搜索输入框 -->
                 <section id="quote-lookup">
                     <input type="text" placeholder="Quote Lookup" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
                 </section>
 
-            <!-- Top Gainers -->
+                <!-- Top Gainers -->
                 <section id="top-gainers" style="margin-top: 20px;">
                     <h2>Top Gainers</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Asset</th>
-                                <th>Price</th>
-                                <th>Change</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>NVDA</td>
-                                <td>$12345</td>
-                                <td style="color: red;">+30%</td>
-                            </tr>
-                            <tr>
-                                <td>Ethereum</td>
-                                <td>$12345</td>
-                                <td style="color: red;">+30%</td>
-                            </tr>
-                            <tr>
-                                <td>Ethereum</td>
-                                <td>$12345</td>
-                                <td style="color: red;">+30%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="scrollable-table" id="gainers-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Price</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gainers-body">
+                                <!-- JS填充 -->
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <!-- Top Losers -->
                 <section id="top-losers" style="margin-top: 20px;">
                     <h2>Top Losers</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Asset</th>
-                                <th>Price</th>
-                                <th>Change</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>NVDA</td>
-                                <td>$12345</td>
-                                <td style="color: green;">−30%</td>
-                            </tr>
-                            <tr>
-                                <td>Ethereum</td>
-                                <td>$12345</td>
-                                <td style="color: green;">−30%</td>
-                            </tr>
-                            <tr>
-                                <td>Ethereum</td>
-                                <td>$12345</td>
-                                <td style="color: green;">−30%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="scrollable-table" id="losers-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Price</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody id="losers-body">
+                                <!-- JS填充 -->
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <!-- 广告位图片 -->
@@ -122,8 +95,8 @@
                 </section>
             </div>
 
-            <!-- 第二列：Net Worth 和 Holdings -->
-            <div class="left-column">
+            <!-- 中间：Net Worth 和 Holdings -->
+            <div class="center-column">
                 <section id="net-worth">
                     <h2>Net Worth</h2>
                     <canvas id="net-worth-chart"></canvas> <!-- 趋势图 -->
@@ -134,12 +107,12 @@
                     <table id="data-table">
                         <thead>
                             <tr>
-                            <th>Asset</th>
-                            <th>Buy Price</th>
-                            <th>Current Price</th>
-                            <th>Change (%)</th>
-                            <th>Total Value</th>
-                            <th>Time</th>
+                                <th>Asset</th>
+                                <th>Buy Price</th>
+                                <th>Current Price</th>
+                                <th>Change (%)</th>
+                                <th>Total Value</th>
+                                <th>Time</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -149,7 +122,7 @@
                 </section>                  
             </div>
 
-            <!-- 第三列：Asset Overview 和 FAQ -->
+            <!-- 右侧：Asset Overview 和 FAQ -->
             <div class="right-column">
                 <!-- 修改！！！ -->
                 <section class="asset-overview">
@@ -205,11 +178,6 @@
                       </div>
                     </div>
                 </section>
-
-
-
-
-
                                   
             </div>
         </div>

@@ -361,3 +361,26 @@ h2 {
     width: 200px;
     height: auto;
 }
+
+/* 添加滚动表格样式 */
+.scrollable-table {
+    height: 150px; /* 固定高度 */
+    overflow-y: hidden; /* 隐藏垂直滚动条 */
+    position: relative;
+}
+
+.scrollable-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scrollable-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
+}
+
+.scrollable-table tbody tr:first-child {
+    margin-top: 0;
+}

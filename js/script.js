@@ -15,6 +15,106 @@ window.onload = function() {
     });
 };
 
+// 创建Top Gainers测试数据
+const gainersData = [
+    { asset: 'NVDA', price: '$987.54', change: '+5.67%' },
+    { asset: 'TSLA', price: '$245.30', change: '+4.21%' },
+    { asset: 'AMD', price: '$156.78', change: '+3.89%' },
+    { asset: 'BTC', price: '$62,450', change: '+3.56%' },
+    { asset: 'ETH', price: '$3,420.20', change: '+2.98%' },
+    { asset: 'AAPL', price: '$192.34', change: '+2.45%' },
+    { asset: 'MSFT', price: '$405.67', change: '+1.98%' },
+    { asset: 'GOOGL', price: '$152.89', change: '+1.76%' },
+    { asset: 'AMZN', price: '$178.45', change: '+1.43%' },
+    { asset: 'NFLX', price: '$654.21', change: '+0.87%' }
+];
+
+// 创建Top Losers测试数据
+const losersData = [
+    { asset: 'FB', price: '$320.45', change: '-3.21%' },
+    { asset: 'UBER', price: '$45.67', change: '-2.87%' },
+    { asset: 'LYFT', price: '$12.34', change: '-2.56%' },
+    { asset: 'SHOP', price: '$67.89', change: '-2.34%' },
+    { asset: 'SQ', price: '$67.23', change: '-1.98%' },
+    { asset: 'ROKU', price: '$89.45', change: '-1.76%' },
+    { asset: 'PLTR', price: '$23.56', change: '-1.54%' },
+    { asset: 'SNAP', price: '$12.78', change: '-1.32%' },
+    { asset: 'DIS', price: '$102.34', change: '-0.98%' },
+    { asset: 'BA', price: '$223.45', change: '-0.76%' }
+];
+
+// 填充Top Gainers表格
+const gainersBody = document.getElementById('gainers-body');
+gainersData.forEach(item => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${item.asset}</td>
+        <td>${item.price}</td>
+        <td style="color: red;">${item.change}</td>
+    `;
+    gainersBody.appendChild(row);
+});
+
+// 填充Top Losers表格
+const losersBody = document.getElementById('losers-body');
+losersData.forEach(item => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${item.asset}</td>
+        <td>${item.price}</td>
+        <td style="color: green;">${item.change}</td>
+    `;
+    losersBody.appendChild(row);
+});
+
+// 实现自动滚动功能（鼠标悬停暂停）
+function initScrolling(containerId, direction = 'up') {
+    const container = document.querySelector(containerId);
+    if (!container) return;
+
+    let scrollStep = 1;
+    const delay = 50;
+    let intervalId = null;
+    let paused = false;
+
+    function startScroll() {
+        if (intervalId) return;
+        intervalId = setInterval(() => {
+            if (paused) return;
+            if (direction === 'up') {
+                container.scrollTop += scrollStep;
+                if (container.scrollTop >= container.scrollHeight - container.clientHeight) {
+                    container.scrollTop = 0;
+                }
+            } else {
+                container.scrollTop -= scrollStep;
+                if (container.scrollTop <= 0) {
+                    container.scrollTop = container.scrollHeight - container.clientHeight;
+                }
+            }
+        }, delay);
+    }
+
+    function stopScroll() {
+        paused = true;
+    }
+
+    function resumeScroll() {
+        paused = false;
+    }
+
+    container.addEventListener('mouseenter', stopScroll);
+    container.addEventListener('mouseleave', resumeScroll);
+
+    startScroll();
+}
+
+// 初始化滚动
+setTimeout(() => {
+    initScrolling('#gainers-scroll');
+    initScrolling('#losers-scroll');
+}, 1000);
+
 // 动态填充 Holdings 表格数据
 const holdingsData = [
     { name: 'NVDA', b_price: 65.44, c_price: 42.65, charge: -25.32, total: 23456, time: '23453' },
@@ -85,4 +185,3 @@ document.querySelectorAll('.faq-item').forEach(item => {
     }
   });
 });
-
