@@ -130,7 +130,15 @@
                 </section>
 
                 <section id="holdings" class="holdings">
-                    <h2>Holdings</h2>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2 style="margin: 0;">Holdings</h2>
+                        <select id="asset-select" style="padding: 6px 10px; border-radius: 6px; font-size: 14px;">
+                          <option value="stock">Stock</option>
+                          <option value="bond">Bond</option>
+                          <option value="etf">ETFs</option>
+                          <option value="crypto">Crypto</option>
+                        </select>
+                      </div>
                     <table id="data-table">
                         <thead>
                             <tr>
