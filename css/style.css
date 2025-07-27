@@ -88,10 +88,20 @@ h1 {
 .main-content {
     display: flex;
     gap: 20px;
+    align-items: stretch; /* 让三列等高 */
 }
 
 .left-column, .right-column {
     width: 50%;
+}
+
+/* 新增：让中间和右侧列自动拉伸高度 */
+.center-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    align-self: stretch;
 }
 
 h2 {
@@ -332,13 +342,6 @@ h2 {
 .faq-item.open .answer {
   padding-top: 10px;
 }  
-
-
-
-
-
-
-
 
 
 
