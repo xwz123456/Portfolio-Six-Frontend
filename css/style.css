@@ -71,7 +71,6 @@ header {
   padding-right: 30px;
   color: transparent; /* 让文字内部透明 */
   -webkit-text-stroke: 1px white; /* 添加白色描边 */
-  /* color: rgb(255, 255, 255); */
 }
 
 /* 新闻搜索框样式 */
@@ -184,12 +183,12 @@ h2 {
 /* Gainers & Losers 样式更新，使用 ID 选择器匹配 HTML */
 #top-gainers,
 #top-losers {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 20px;
   padding: 15px;
   margin-bottom: 20px;
-  background-color: #fff8ed;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(3px);
 }
 
 /* 标题样式修正为 h2 */
@@ -229,7 +228,9 @@ h2 {
 
 #top-gainers th,
 #top-losers th {
-  background-color: #fff8ed;
+  /* background-color: rgba(255, 248, 237, 0.4);
+  backdrop-filter: blur(3px); */
+  background-color: rgb(255, 248, 237);
   font-weight: bold;
 }
 
