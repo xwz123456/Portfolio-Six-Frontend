@@ -121,19 +121,42 @@ fetch('/api/net-worth.json')  // 确保替换为实际路径
                     label: 'Net Worth',
                     data: netWorthData,
                     borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'transparent',
+                    pointBorderColor: '#6de0ff',
+                    pointBackgroundColor: '#6de0ff',
                     borderWidth: 2,
                     fill: false
                 }]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: false
+                plugins: {
+                    legend: {
+                      labels: {
+                        color: 'white'  // 图例字体颜色
+                      }
                     }
-                }
-            }
-        });
-    })
+                  },
+                scales: {
+                    x: {
+                        ticks: {
+                          color: 'white'  // x轴标签颜色
+                        },
+                        grid: {
+                          color: 'rgba(255, 255, 255, 0.1)' // 可选：x轴线颜色淡一点
+                        }
+                      },
+                      y: {
+                        ticks: {
+                          color: 'white'  // y轴标签颜色
+                        },
+                        grid: {
+                          color: 'rgba(255, 255, 255, 0.1)' // 可选：y轴线颜色淡一点
+                        }
+                      }
+                    }
+                  }
+                })
+            })
     .catch(error => {
         console.error('Error loading net worth data:', error);
     });
