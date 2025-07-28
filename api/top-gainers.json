@@ -1,0 +1,5 @@
+[
+  { "name": "NVDA", "price": 1, "change": 0.3 },
+  { "name": "Ethereum", "price": 56789, "change": 0.25 },
+  { "name": "Ethereum", "price": 56789, "change": 0.25}
+]
