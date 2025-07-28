@@ -87,13 +87,23 @@ h1 {
 
 /* 页面布局 */
 .main-content {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: stretch; /* 让三列等高 */
 }
 
 .left-column,
 .right-column {
   width: 50%;
+}
+
+/* 新增：让中间和右侧列自动拉伸高度 */
+.center-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    align-self: stretch;
 }
 
 h2 {
@@ -342,7 +352,7 @@ h2 {
 
 .faq-item.open .answer {
   padding-top: 10px;
-}
+}  
 
 
 
@@ -364,4 +374,27 @@ h2 {
 .logo img {
   width: 200px;
   height: auto;
+}
+
+/* 添加滚动表格样式 */
+.scrollable-table {
+    height: 150px; /* 固定高度 */
+    overflow-y: hidden; /* 隐藏垂直滚动条 */
+    position: relative;
+}
+
+.scrollable-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scrollable-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
+}
+
+.scrollable-table tbody tr:first-child {
+    margin-top: 0;
 }

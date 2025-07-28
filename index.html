@@ -40,9 +40,7 @@
                     <span class="gear">⚙️</span>
                 </div>
             </div>
-        </header>
-
-
+          </header>
         <div class="main-content">
 
             <!-- 第一列：Quote Lookup + Gainers + Losers + 图片 -->
@@ -56,35 +54,39 @@
                 <!-- Top Gainers -->
                 <section id="top-gainers" style="margin-top: 20px;">
                     <h2>Top Gainers</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Asset</th>
-                                <th>Price</th>
-                                <th>Change</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
+                    <div class="scrollable-table" id="gainers-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Price</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gainers-body">
+                                <!-- JS填充 -->
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <!-- Top Losers -->
                 <section id="top-losers" style="margin-top: 20px;">
                     <h2>Top Losers</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Asset</th>
-                                <th>Price</th>
-                                <th>Change</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
+                    <div class="scrollable-table" id="losers-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Price</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody id="losers-body">
+                                <!-- JS填充 -->
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <!-- 广告位图片 -->
@@ -93,8 +95,8 @@
                 </section>
             </div>
 
-            <!-- 第二列：Net Worth 和 Holdings -->
-            <div class="left-column">
+            <!-- 中间：Net Worth 和 Holdings -->
+            <div class="center-column" style="display: flex; flex-direction: column; gap: 15px;">
                 <section id="net-worth">
                     <h2>Net Worth</h2>
                     <canvas id="net-worth-chart"></canvas> <!-- 趋势图 -->
@@ -128,10 +130,10 @@
                 </section>
             </div>
 
-            <!-- 第三列：Asset Overview 和 FAQ -->
+            <!-- 右侧：Asset Overview 和 FAQ -->
             <div class="right-column">
-
-                <section class="asset-overview">
+                <!-- 修改！！！ -->
+                <section class="asset-overview"  style="height: 323px; margin-bottom: 2px;">
                     <h2>Asset Overview</h2>
                     <div class="overview-grid">
 
@@ -140,7 +142,7 @@
 
 
                 <!-- FAQ部分 -->
-                <section class="faq">
+                <section class="faq" style="height: 403px;">
                     <h2 class="faq_title">Frequently Asked Questions</h2>
                     <div class="faq-list">
                         <div class="faq-item">

@@ -1,5 +1,11 @@
 [
   { "name": "NVDA", "price": 1, "change": 0.3 },
   { "name": "Ethereum", "price": 56789, "change": 0.25 },
-  { "name": "Ethereum", "price": 56789, "change": 0.25}
+  { "name": "Ethereum", "price": 56789, "change": 0.25},
+  { "name": "Ethlreum", "price": 56739, "change": 0.25 },
+  { "name": "Ethsteum", "price": 56789, "change": 0.25 },
+  { "name": "Eahereum", "price": 55789, "change": 0.25 },
+  { "name": "Ethtreum", "price": 56589, "change": 0.25 },
+  { "name": "4thereum", "price": 56489, "change": 0.25 },
+  { "name": "Etgereum", "price": 56589, "change": 0.25 }
 ]
