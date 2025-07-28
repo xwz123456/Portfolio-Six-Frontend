@@ -87,6 +87,15 @@ header {
 
 
 
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+  }
+}
+
 /* 图标区域样式 */
 .icons {
   display: flex;
