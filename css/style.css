@@ -78,8 +78,6 @@ header {
   color: #ffffff;
 }
 
-
-
 h1 {
   font-size: 2.5rem;
   color: #333;
@@ -287,7 +285,7 @@ h2 {
 
 
 /* FAQ */
-.faq {
+/* .faq {
   background-color: #224977;
   padding: 20px;
   border-radius: 15px;
@@ -342,9 +340,85 @@ h2 {
 
 .faq-item.open .answer {
   padding-top: 10px;
+} */
+
+/* FAQ 样式 */
+.faq {
+  background-color: #224977;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.faq_title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 10px;
+  position: relative;
 }
 
 
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.question {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 10px;
+  padding: 0 20px 0 0; /* 初始 padding 收起 */
+  opacity: 0;
+}
+
+.faq-item.active .answer {
+  background-image: url("../logo_6.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 100px;
+  background-color: rgba(10, 9, 77, 0.4);
+  border-radius: 10px;
+  padding: 16px 20px 16px 16px;
+  color: #fff;
+  opacity: 1;
+}
+
+.faq-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq-item.active .faq-toggle .fa-times {
+  display: inline;
+}
+
+.faq-item.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
 
 /* 开屏页面样式 */
 .splash-screen {
@@ -364,4 +438,54 @@ h2 {
 .logo img {
   width: 200px;
   height: auto;
+}
+
+/* 主题色切换 */
+/* 🌗 主题切换支持：浅色模式样式（基于 .light-theme） */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+body.light-theme header,
+body.light-theme .top-nav h1 {
+  background-color: #f5f5f5;
+  color: #00233d;
+}
+
+body.light-theme .icons span,
+body.light-theme .user {
+  color: #00233d;
+}
+
+body.light-theme .asset-overview,
+body.light-theme .holdings,
+body.light-theme #net-worth,
+body.light-theme .faq {
+  background-color: #eaeaea;
+  color: #00233d;
+}
+
+body.light-theme .faq-item.active .answer {
+  background-color: rgba(200, 200, 255, 0.3);
+  color: #00233d;
+}
+
+body.light-theme .asset {
+  background-color: #fff;
+  color: #00233d;
+}
+
+body.light-theme .asset .total_value {
+  color: #003366;
+}
+
+body.light-theme #top-gainers h2,
+body.light-theme #top-losers h2 {
+  color: #fff;
+}
+
+body.light-theme .icons button {
+  background-color: #ddd;
+  color: #00233d;
 }

@@ -15,10 +15,7 @@ window.onload = function () {
     });
 };
 
-
-
-
-// 📊 加载并渲染 Holdings 表格数据
+// 加载并渲染 Holdings 表格数据
 function updateHoldingsTable(type) {
     const tbody = document.querySelector('#data-table tbody');
     tbody.innerHTML = '';
@@ -172,18 +169,50 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTopLosers();
 });
 
+// // FAQ 功能实现
+// document.querySelectorAll('.faq-item').forEach(item => {
+//     const question = item.querySelector('.question');
+//     const answer = item.querySelector('.answer');
 
+//     question.addEventListener('click', () => {
+//         item.classList.toggle('open');
+//         if (item.classList.contains('open')) {
+//             answer.style.maxHeight = answer.scrollHeight + 'px';
+//         } else {
+//             answer.style.maxHeight = '0';
+//         }
+//     });
+// });
+// FAQ 手风琴功能
+document.addEventListener("DOMContentLoaded", () => {
+  const questions = document.querySelectorAll(".faq-item .question");
 
-document.querySelectorAll('.faq-item').forEach(item => {
-    const question = item.querySelector('.question');
-    const answer = item.querySelector('.answer');
+  questions.forEach((questionEl) => {
+    questionEl.addEventListener("click", () => {
+      const faqItem = questionEl.closest(".faq-item");
+      const answer = faqItem.querySelector(".answer");
+      const isActive = faqItem.classList.contains("active");
 
-    question.addEventListener('click', () => {
-        item.classList.toggle('open');
-        if (item.classList.contains('open')) {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-            answer.style.maxHeight = '0';
-        }
+      if (isActive) {
+        // 收起
+        answer.style.maxHeight = answer.scrollHeight + "px"; // 确保有高度
+        requestAnimationFrame(() => {
+          answer.style.maxHeight = "0px";
+          answer.style.paddingTop = "0";
+          answer.style.paddingBottom = "0";
+          answer.style.opacity = "0";
+          faqItem.classList.remove("active");
+        });
+      } else {
+        // 展开
+        faqItem.classList.add("active");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.opacity = "1";
+      }
     });
+  });
+});
+
+document.getElementById("toggle-theme").addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
 });
