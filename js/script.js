@@ -159,21 +159,6 @@ fetch('/api/net-worth.json')  // 确保替换为实际路径
         })
 
 
-
-
-
-
-    //         options: {
-    //             scales: {
-    //                 y: {
-    //                     beginAtZero: false
-    //                 }
-    //             }
-    //         }
-    //     });
-    // })
-
-
     .catch(error => {
         console.error('Error loading net worth data:', error);
     });
