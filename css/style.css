@@ -283,65 +283,6 @@ h2 {
   color: #2ecc71;
 }
 
-
-/* FAQ */
-/* .faq {
-  background-color: #224977;
-  padding: 20px;
-  border-radius: 15px;
-}
-
-.faq_title {
-  color: #ffffff;
-  font-size: 18px;
-  text-align: center;
-}
-
-.faq-list>div {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-}
-
-
-.faq-item {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  background-color: #f9f9f9;
-}
-
-.faq-item .question {
-  padding: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq-item .toggle-btn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.faq-item .answer {
-  padding: 0 15px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.faq-item.open .answer {
-  padding-top: 10px;
-} */
-
 /* FAQ 样式 */
 .faq {
   background-color: #224977;
