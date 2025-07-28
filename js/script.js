@@ -1,45 +1,19 @@
 // 开屏效果
-window.onload = function() {
-    // 获取元素
-    const splashScreen = document.getElementById('splash-screen');
-    const dashboard = document.getElementById('dashboard');
+window.onload = function () {
+  // 获取元素
+  const splashScreen = document.getElementById('splash-screen');
+  const dashboard = document.getElementById('dashboard');
 
-    // 监听鼠标滚动事件
-    window.addEventListener('wheel', function() {
-        // 当用户滑动鼠标时，执行以下操作
-        splashScreen.style.opacity = 0;  // 隐藏开屏页面
-        setTimeout(() => {
-            splashScreen.style.display = 'none';  // 完全移除开屏页面
-            dashboard.style.opacity = 1;  // 显示主题页
-        }, 1000);  // 延时以便过渡效果
-    });
+  // 监听鼠标滚动事件
+  window.addEventListener('wheel', function () {
+    // 当用户滑动鼠标时，执行以下操作
+    splashScreen.style.opacity = 0;  // 隐藏开屏页面
+    setTimeout(() => {
+      splashScreen.style.display = 'none';  // 完全移除开屏页面
+      dashboard.style.opacity = 1;  // 显示主题页
+    }, 1000);  // 延时以便过渡效果
+  });
 };
-
-// // 动态填充 Holdings 表格数据
-// const holdingsData = [
-//     { name: 'NVDA', b_price: 65.44, c_price: 42.65, charge: -25.32, total: 23456, time: '23453' },
-//     { name: 'TSLA', b_price: 55.34, c_price: 76.53, charge: 34.43, total: 345346, time: '34534543' },
-//     { name: 'AAPL', b_price: 42.55, c_price: 75.33, charge: 45.64, total: 345345, time: '345345345' },
-//     { name: 'O2HO', b_price: 53.24, c_price: 43.56, charge: -15.56, total: 45644, time: '234234' },
-//     { name: 'AMZN', b_price: 67.25, c_price: 76.43, charge: 64.24, total: 45644, time: '234234' },
-//     { name: 'RHM',  b_price: 55.24, c_price: 45.74, charge: -56.35, total: 34534, time: '234234' }
-//   ];
-  
-//   const tbody = document.querySelector('#data-table tbody');
-//   holdingsData.forEach(item => {
-//     const tr = document.createElement('tr');
-//     const changeClass = item.charge >= 0 ? 'positive' : 'negative';
-//     tr.innerHTML = `
-//       <td>${item.name}</td>
-//       <td>${item.b_price.toFixed(2)}</td>
-//       <td>${item.c_price.toFixed(2)}</td>
-//       <td class="${changeClass}">${item.charge.toFixed(2)}%</td>
-//       <td>${item.total}</td>
-//       <td>${item.time}</td>
-//     `;
-//     tbody.appendChild(tr);
-//   });
-  
 
 let allHoldingsData = []; // 全部数据缓存
 
@@ -113,9 +87,6 @@ function renderHoldingsTable(data) {
 
 // 页面加载后初始化
 document.addEventListener('DOMContentLoaded', fetchHoldingsData);
-
-
-
 
 // 趋势图：
 // 嵌入的 Net Worth 数据（原本来自接口）
@@ -261,11 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTableFromApi('/api/top-losers.json', '#top-losers', false);
 });
 
-
-
 async function updateAssetOverview() {
   try {
-    const response = await fetch('/api/asset-overview.json'); // ✅ 替换为实际 API
+    const response = await fetch('/api/asset-overview.json'); // 替换为实际 API
     if (!response.ok) throw new Error('网络错误');
 
     const data = await response.json();
@@ -299,9 +268,6 @@ async function updateAssetOverview() {
 }
 
 document.addEventListener('DOMContentLoaded', updateAssetOverview);
-
-
-
 
 // FAQ部分
 document.querySelectorAll('.faq-item').forEach(item => {
