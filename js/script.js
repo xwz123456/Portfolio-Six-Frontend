@@ -91,7 +91,6 @@ function updateHoldingsTable(type) {
         });
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     // 加载默认的 stock 数据
     updateHoldingsTable('stock');
@@ -144,7 +143,10 @@ function updateAssetOverview() {
     overviewGrid.innerHTML = '';
 
     fetch('/api/asset-overview.json')  // 确保替换为实际路径
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch asset overview data');
+            return response.json();
+        })
         .then(data => {
             data.forEach(item => {
                 const assetDiv = document.createElement('div');
@@ -161,6 +163,7 @@ function updateAssetOverview() {
         })
         .catch(error => {
             console.error('Error loading asset overview data:', error);
+            overviewGrid.innerHTML = '<div>Failed to load data</div>';
         });
 }
 
@@ -170,7 +173,10 @@ function updateTopGainers() {
     tbody.innerHTML = '';
 
     fetch('/api/top-gainers.json')  // 确保替换为实际路径
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch top gainers data');
+            return response.json();
+        })
         .then(data => {
             data.forEach(item => {
                 const tr = document.createElement('tr');
@@ -184,6 +190,7 @@ function updateTopGainers() {
         })
         .catch(error => {
             console.error('Error loading top gainers data:', error);
+            tbody.innerHTML = '<tr><td colspan="3">Failed to load data</td></tr>';
         });
 }
 
@@ -193,7 +200,10 @@ function updateTopLosers() {
     tbody.innerHTML = '';
 
     fetch('/api/top-losers.json')  // 确保替换为实际路径
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch top losers data');
+            return response.json();
+        })
         .then(data => {
             data.forEach(item => {
                 const tr = document.createElement('tr');
@@ -207,6 +217,7 @@ function updateTopLosers() {
         })
         .catch(error => {
             console.error('Error loading top losers data:', error);
+            tbody.innerHTML = '<tr><td colspan="3">Failed to load data</td></tr>';
         });
 }
 
@@ -217,8 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTopLosers();
 });
 
-
-
+// FAQ toggle logic
 document.querySelectorAll('.faq-item').forEach(item => {
     const question = item.querySelector('.question');
     const answer = item.querySelector('.answer');

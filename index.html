@@ -12,6 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 引入趋势图库 -->
+    <link rel="stylesheet" href="css/glow-effect.css" /> <!-- 引入外部样式 -->
 </head>
 
 <body>
@@ -21,6 +22,9 @@
             <img src="logo.jpg" alt="Logo"> <!-- 请确保你有一个 logo.png 图片 -->
         </div>
     </div>
+
+    <!-- 粒子效果 Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
     <!-- 主题页 Dashboard -->
     <div class="dashboard" id="dashboard" style="opacity: 0;">
@@ -170,7 +174,9 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script> <!-- 引入主要逻辑 -->
+    <script src="js/particle-effect.js"></script> <!-- 引入粒子效果 -->
+    <script src="js/theme-toggle.js"></script> <!-- 引入外部脚本 -->
 </body>
 
 </html>
