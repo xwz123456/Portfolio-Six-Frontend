@@ -1,218 +1,227 @@
 /* 通用样式 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #00233d;
-    margin: 20px;
+  background-color: #00233d;
+  margin: 20px;
 }
 
 .dashboard {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header {
-    text-align: center;
-    padding: 5px;
-    background-color: #00233d;
-  }
-  
-  /* 新导航栏主容器 */
-  .top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* 保证响应式布局 */
-  }
-  
-  /* 左边 logo 和标题 */
-  .top-nav h1 {
-    font-size: 38px;
-    margin: 0;
-    padding-right: 30px;
-    color: #ffffff;
-  }
-  
-  /* 新闻搜索框样式 */
-  .news-search {
-    width: 300px;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-  }
-  
-  /* 图标区域样式 */
-  .icons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icons span,
-  .icons button {
-    margin-left: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-  
-  .icons button {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #eee;
-    transition: background-color 0.3s ease;
-  }
-  
-  .icons button:hover {
-    background-color: #ddd;
-  }
+  text-align: center;
+  padding: 5px;
+  background-color: #00233d;
+}
 
-  .user {
-    color: #ffffff;
-  }
-  
+/* 新导航栏主容器 */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* 保证响应式布局 */
+}
+
+/* 左边 logo 和标题 */
+.top-nav h1 {
+  font-size: 38px;
+  margin: 0;
+  padding-right: 30px;
+  color: #ffffff;
+}
+
+/* 新闻搜索框样式 */
+.news-search {
+  width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+/* 图标区域样式 */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons span,
+.icons button {
+  margin-left: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.icons button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  transition: background-color 0.3s ease;
+}
+
+.icons button:hover {
+  background-color: #ddd;
+}
+
+.user {
+  color: #ffffff;
+}
+
 
 
 h1 {
-    font-size: 2.5rem;
-    color: #333;
+  font-size: 2.5rem;
+  color: #333;
 }
 
 /* 页面布局 */
 .main-content {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
-.left-column, .right-column {
-    width: 50%;
+.left-column,
+.right-column {
+  width: 50%;
 }
 
 h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 /* Gainers & Losers 样式更新，使用 ID 选择器匹配 HTML */
-#top-gainers, #top-losers {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 15px;
-    margin-bottom: 20px;
-    background-color: #fff8ed;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-  
-  /* 标题样式修正为 h2 */
-  #top-gainers h2 {
-    color: #ffffff;
-    background-color: #6f1c1c;
-    text-align: center;
-    margin-bottom: 12px;
-    padding: 8px;
-    border-radius: 10px;
-  }
-  
-  #top-losers h2 {
-    color: #ffffff;
-    background-color: #2f6237;
-    text-align: center;
-    margin-bottom: 12px;
-    padding: 8px;
-    border-radius: 10px;
-  }
-  
-  /* 表格样式补充 */
-  #top-gainers table,
-  #top-losers table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  #top-gainers th, #top-losers th,
-  #top-gainers td, #top-losers td {
-    padding: 8px 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  #top-gainers th, #top-losers th {
-    background-color: #fff8ed;
-    font-weight: bold;
-  }
-  
+#top-gainers,
+#top-losers {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff8ed;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 标题样式修正为 h2 */
+#top-gainers h2 {
+  color: #ffffff;
+  background-color: #6f1c1c;
+  text-align: center;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#top-losers h2 {
+  color: #ffffff;
+  background-color: #2f6237;
+  text-align: center;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* 表格样式补充 */
+#top-gainers table,
+#top-losers table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#top-gainers th,
+#top-losers th,
+#top-gainers td,
+#top-losers td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+#top-gainers th,
+#top-losers th {
+  background-color: #fff8ed;
+  font-weight: bold;
+}
 
 
-  /* 广告位图片 */
-  #bottom-image {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  #bottom-image img {
-    width: 300px;              /* 固定宽度 */
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  
+
+/* 广告位图片 */
+#bottom-image {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#bottom-image img {
+  width: 300px;
+  /* 固定宽度 */
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Net Worth 趋势图 */
 #net-worth {
-    background-color: #224977;
-    padding: 20px;
-    color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #224977;
+  padding: 20px;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #net-worth canvas {
-    width: 100%;
-    height: 300px;
+  width: 100%;
+  height: 300px;
 }
 
 /* Holdings */
 .holdings {
-    background-color: #224977;
-    color: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  .holdings h2 {
-    margin-bottom: 16px;
-  }
-  
-  .holdings table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .holdings th, .holdings td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  /* 可选：为正负变化添加颜色 */
-  .positive {
-    color: lightgreen;
-  }
-  
-  .negative {
-    color: red;
-  }
-  
+  background-color: #224977;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.holdings h2 {
+  margin-bottom: 16px;
+}
+
+.holdings table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.holdings th,
+.holdings td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 可选：为正负变化添加颜色 */
+.positive {
+  color: lightgreen;
+}
+
+.negative {
+  color: red;
+}
+
 /* Asset Overview */
 /* Asset Overview修改！！！ */
 .asset-overview {
@@ -275,20 +284,22 @@ h2 {
 .asset[data-type="bond"] .value {
   color: #2ecc71;
 }
-/* 
+
+
 /* FAQ */
 .faq {
-    background-color: #224977;
-    padding: 20px;
-    border-radius: 15px;
-  }
+  background-color: #224977;
+  padding: 20px;
+  border-radius: 15px;
+}
+
 .faq_title {
   color: #ffffff;
   font-size: 18px;
   text-align: center;
 }
-  
-.faq-list > div {
+
+.faq-list>div {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ddd;
@@ -331,33 +342,26 @@ h2 {
 
 .faq-item.open .answer {
   padding-top: 10px;
-}  
-
-
-
-
-
-
-
+}
 
 
 
 /* 开屏页面样式 */
 .splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    transition: opacity 1s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: opacity 1s ease-out;
 }
 
 .logo img {
-    width: 200px;
-    height: auto;
+  width: 200px;
+  height: auto;
 }

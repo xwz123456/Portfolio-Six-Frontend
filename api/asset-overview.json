@@ -1,0 +1,23 @@
+[
+    {
+      "type": "stock",
+      "change": 17,
+      "sum": 6586.26
+    },
+    {
+      "type": "bond",
+      "change": 5.46,
+      "sum": 0
+    },
+    {
+      "type": "etf",
+      "change": 67.77,
+      "sum": 8535.52
+    },
+    {
+      "type": "crypto",
+      "change": -23.42,
+      "sum": 34535.66
+    }
+  ]
+  
