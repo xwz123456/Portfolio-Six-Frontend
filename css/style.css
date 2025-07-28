@@ -29,10 +29,6 @@
 
 
 
-/* body {
-  background-color: #00233d;
-  margin: 20px;
-} */
 
 /* 🌌 默认暗色模式背景图 */
 body {
@@ -89,6 +85,8 @@ header {
   background-color: rgba(0, 35, 61, 0.05);
   backdrop-filter: blur(3px);
 }
+
+
 
 /* 图标区域样式 */
 .icons {
@@ -166,14 +164,15 @@ h2 {
 }
 
 #quote-lookup input {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 5px;
+  width: 300px;
+  padding: 10px 20px;
+  border-radius: 999px;
   border: 1px solid white;
   background-color: transparent;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
+  height: 42px;
 }
 
 #quote-lookup input::placeholder {
@@ -255,9 +254,12 @@ h2 {
 
 /* Net Worth 趋势图 */
 #net-worth {
-  background-color: #224977;
+  margin-top: 20px;
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(3px);
   padding: 20px;
-  color: #ffffff;
+  color: transparent; /* 让文字内部透明 */
+  -webkit-text-stroke: 0.7px white; /* 添加白色描边 */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -269,22 +271,35 @@ h2 {
 
 /* Holdings */
 .holdings {
-  background-color: #224977;
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(3px);
   color: white;
   border-radius: 15px;
   padding: 20px;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .holdings h2 {
+  color: transparent; /* 让文字内部透明 */
+  -webkit-text-stroke: 0.7px white; /* 添加白色描边 */
   margin-bottom: 16px;
 }
 
 .holdings table {
   width: 100%;
   border-collapse: collapse;
+}
+
+#asset-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: rgba(0, 35, 61, 0.05);
+  backdrop-filter: blur(3px);
+  border: 1px solid #ccc;
+  color: #ccc;
 }
 
 .holdings th,
@@ -306,16 +321,19 @@ h2 {
 /* Asset Overview */
 /* Asset Overview修改！！！ */
 .asset-overview {
-  background-color: #224977;
+  margin-top: 20px;
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(3px);
   border-radius: 15px;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .asset-overview h2 {
   text-align: center;
   font-size: 22px;
-  color: #ffffff;
+  color: transparent; /* 让文字内部透明 */
+  -webkit-text-stroke: 0.7px white; /* 添加白色描边 */
   margin-bottom: 15px;
 }
 
@@ -326,13 +344,13 @@ h2 {
 }
 
 .asset {
-  background-color: #fff8ed;
+  background-color: rgba(142, 142, 142, 0.3);
   border-radius: 10px;
   padding: 20px;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-  color: #00233d;
+  color: #ffffff;
   transition: transform 0.3s ease;
 }
 
@@ -352,7 +370,7 @@ h2 {
   font-size: 18px;
   margin-top: 8px;
   font-weight: normal;
-  color: #224977;
+  color: #71faff;
 }
 
 /* 根据资产类型显示不同颜色（可选增强） */
@@ -370,7 +388,8 @@ h2 {
 
 /* FAQ 样式 */
 .faq {
-  background-color: #224977;
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(3px);
   color: white;
   border-radius: 15px;
   padding: 20px;
@@ -378,7 +397,9 @@ h2 {
 }
 
 .faq_title {
-  font-size: 20px;
+  color: transparent; /* 让文字内部透明 */
+  -webkit-text-stroke: 0.7px white; /* 添加白色描边 */
+  font-size: 18px;
   margin-bottom: 16px;
 }
 
@@ -405,7 +426,8 @@ h2 {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
-  font-size: 16px;
+  font-size: 14px;
+  color: #e5e5e5;
   line-height: 1.5;
   margin-top: 10px;
   padding: 0 20px 0 0; /* 初始 padding 收起 */
@@ -413,11 +435,11 @@ h2 {
 }
 
 .faq-item.active .answer {
-  background-image: url("../logo_6.png");
+  background-image: url("../small_logo.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: 100px;
-  background-color: rgba(10, 9, 77, 0.4);
+  background-color: rgba(2, 1, 63, 0.3);
   border-radius: 10px;
   padding: 16px 20px 16px 16px;
   color: #fff;
