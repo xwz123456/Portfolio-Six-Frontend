@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-six-frontend",
+  "version": "1.0.0",
+  "description": "portfolio six frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xwz123456/Portfolio-Six-Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xwz123456/Portfolio-Six-Frontend/issues"
+  },
+  "homepage": "https://github.com/xwz123456/Portfolio-Six-Frontend#readme"
+}
