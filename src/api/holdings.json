@@ -1,26 +1,26 @@
-    [
-        { "name": "AAPL", "b_price": 145.32, "c_price": 150.85, "charge": 3.8, "total": 100000, "time": "2025-07-25 09:00:00", "type": "stock" },
-        { "name": "MSFT", "b_price": 298.10, "c_price": 305.67, "charge": 2.53, "total": 120000, "time": "2025-07-25 09:10:00", "type": "stock" },
-        { "name": "GOOGL", "b_price": 2700.00, "c_price": 2600.50, "charge": -3.69, "total": 95000, "time": "2025-07-25 09:20:00", "type": "stock" },
-        { "name": "TSLA", "b_price": 620.50, "c_price": 700.25, "charge": 12.86, "total": 85000, "time": "2025-07-25 09:30:00", "type": "stock" },
-        { "name": "NVDA", "b_price": 200.40, "c_price": 190.00, "charge": -5.19, "total": 78000, "time": "2025-07-25 09:40:00", "type": "stock" },
-    
-    { "name": "US10Y", "b_price": 98.20, "c_price": 99.75, "charge": 1.58, "total": 50000, "time": "2025-07-25 09:00:00", "type": "bond" },
-    { "name": "CN5Y", "b_price": 102.50, "c_price": 101.20, "charge": -1.27, "total": 45000, "time": "2025-07-25 09:10:00", "type": "bond" },
-    { "name": "EU30Y", "b_price": 105.30, "c_price": 108.90, "charge": 3.41, "total": 47000, "time": "2025-07-25 09:20:00", "type": "bond" },
-    { "name": "JP20Y", "b_price": 100.00, "c_price": 99.95, "charge": -0.05, "total": 44000, "time": "2025-07-25 09:30:00", "type": "bond" },
-    { "name": "GB10Y", "b_price": 101.15, "c_price": 100.85, "charge": -0.30, "total": 43000, "time": "2025-07-25 09:40:00", "type": "bond" },
-  
-    { "name": "VTI", "b_price": 215.00, "c_price": 220.50, "charge": 2.56, "total": 60000, "time": "2025-07-25 10:00:00", "type": "etfs" },
-    { "name": "VOO", "b_price": 385.00, "c_price": 380.20, "charge": -1.25, "total": 62000, "time": "2025-07-25 10:10:00", "type": "etfs" },
-    { "name": "ARKK", "b_price": 110.45, "c_price": 115.00, "charge": 4.11, "total": 58000, "time": "2025-07-25 10:20:00", "type": "etfs" },
-    { "name": "QQQ", "b_price": 360.10, "c_price": 355.50, "charge": -1.28, "total": 64000, "time": "2025-07-25 10:30:00", "type": "etfs" },
-    { "name": "SPY", "b_price": 440.25, "c_price": 445.90, "charge": 1.28, "total": 70000, "time": "2025-07-25 10:40:00", "type": "etfs" },
-  
-    { "name": "BTC", "b_price": 34000, "c_price": 36000, "charge": 5.88, "total": 90000, "time": "2025-07-25 11:00:00", "type": "crypto" },
-    { "name": "ETH", "b_price": 2100, "c_price": 2300, "charge": 9.52, "total": 85000, "time": "2025-07-25 11:10:00", "type": "crypto" },
-    { "name": "DOGE", "b_price": 0.08, "c_price": 0.075, "charge": -6.25, "total": 40000, "time": "2025-07-25 11:20:00", "type": "crypto" },
-    { "name": "BNB", "b_price": 300, "c_price": 295, "charge": -1.67, "total": 48000, "time": "2025-07-25 11:30:00", "type": "crypto" },
-    { "name": "SOL", "b_price": 60, "c_price": 63, "charge": 5.00, "total": 51000, "time": "2025-07-25 11:40:00", "type": "crypto" }
-  ]
+[
+{ "name": "AAPL", "b_price": 145.32, "c_price": 150.85, "charge": 3.8, "total": 100000, "time": "2025-07-25 09:00:00", "type": "stock" },
+{ "name": "MSFT", "b_price": 298.10, "c_price": 305.67, "charge": 2.53, "total": 120000, "time": "2025-07-25 09:10:00", "type": "stock" },
+{ "name": "GOOGL", "b_price": 2700.00, "c_price": 2600.50, "charge": -3.69, "total": 95000, "time": "2025-07-25 09:20:00", "type": "stock" },
+{ "name": "TSLA", "b_price": 620.50, "c_price": 700.25, "charge": 12.86, "total": 85000, "time": "2025-07-25 09:30:00", "type": "stock" },
+{ "name": "NVDA", "b_price": 200.40, "c_price": 190.00, "charge": -5.19, "total": 78000, "time": "2025-07-25 09:40:00", "type": "stock" },
+
+{ "name": "US10Y", "b_price": 98.20, "c_price": 99.75, "charge": 1.58, "total": 50000, "time": "2025-07-25 09:00:00", "type": "bond" },
+{ "name": "CN5Y", "b_price": 102.50, "c_price": 101.20, "charge": -1.27, "total": 45000, "time": "2025-07-25 09:10:00", "type": "bond" },
+{ "name": "EU30Y", "b_price": 105.30, "c_price": 108.90, "charge": 3.41, "total": 47000, "time": "2025-07-25 09:20:00", "type": "bond" },
+{ "name": "JP20Y", "b_price": 100.00, "c_price": 99.95, "charge": -0.05, "total": 44000, "time": "2025-07-25 09:30:00", "type": "bond" },
+{ "name": "GB10Y", "b_price": 101.15, "c_price": 100.85, "charge": -0.30, "total": 43000, "time": "2025-07-25 09:40:00", "type": "bond" },
+
+{ "name": "VTI", "b_price": 215.00, "c_price": 220.50, "charge": 2.56, "total": 60000, "time": "2025-07-25 10:00:00", "type": "etfs" },
+{ "name": "VOO", "b_price": 385.00, "c_price": 380.20, "charge": -1.25, "total": 62000, "time": "2025-07-25 10:10:00", "type": "etfs" },
+{ "name": "ARKK", "b_price": 110.45, "c_price": 115.00, "charge": 4.11, "total": 58000, "time": "2025-07-25 10:20:00", "type": "etfs" },
+{ "name": "QQQ", "b_price": 360.10, "c_price": 355.50, "charge": -1.28, "total": 64000, "time": "2025-07-25 10:30:00", "type": "etfs" },
+{ "name": "SPY", "b_price": 440.25, "c_price": 445.90, "charge": 1.28, "total": 70000, "time": "2025-07-25 10:40:00", "type": "etfs" },
+
+{ "name": "BTC", "b_price": 34000, "c_price": 36000, "charge": 5.88, "total": 90000, "time": "2025-07-25 11:00:00", "type": "crypto" },
+{ "name": "ETH", "b_price": 2100, "c_price": 2300, "charge": 9.52, "total": 85000, "time": "2025-07-25 11:10:00", "type": "crypto" },
+{ "name": "DOGE", "b_price": 0.08, "c_price": 0.075, "charge": -6.25, "total": 40000, "time": "2025-07-25 11:20:00", "type": "crypto" },
+{ "name": "BNB", "b_price": 300, "c_price": 295, "charge": -1.67, "total": 48000, "time": "2025-07-25 11:30:00", "type": "crypto" },
+{ "name": "SOL", "b_price": 60, "c_price": 63, "charge": 5.00, "total": 51000, "time": "2025-07-25 11:40:00", "type": "crypto" }
+]
   

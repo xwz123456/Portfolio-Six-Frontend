@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         initScrolling('#gainers-scroll');
         initScrolling('#losers-scroll');
+        initScrolling('#holdings-scroll');
     }, 1000);
     initHoldingsTable();
     initOverview();
