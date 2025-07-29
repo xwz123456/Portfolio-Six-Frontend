@@ -2,8 +2,8 @@
     { "name": "NVDA", "price": 12345, "change": 0.3 },
     { "name": "test", "price": 56789, "change": 0.25 },
     { "name": "tese", "price": 56789, "change": 0.25},
-    { "name": "AAPL", "price": 15000, "change": -0.15 },
-    { "name": "TSLA", "price": 7000, "change": -0.2 },
-    { "name": "AMZN", "price": 3200, "change": -0.1 }
+    { "name": "AAPL", "price": 15000, "change": 0.15 },
+    { "name": "TSLA", "price": 7000, "change": 0.2 },
+    { "name": "AMZN", "price": 3200, "change": 0.1 }
 
 ]
