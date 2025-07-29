@@ -10,15 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 引入趋势图库 -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <!-- 开屏 Logo 页面 -->
     <div class="splash-screen" id="splash-screen">
         <video id="splash-video" autoplay muted loop playsinline>
-            <source src="start.mp4" type="video/mp4">
+            <source src="../public/videos/start.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -27,7 +27,7 @@
         <header>
             <div class="top-nav">
                 <div class="nav-left" style="display: flex; align-items: center;">
-                    <img src="logo_6.png" alt="Logo" style="height: 120px; margin-right: 15px;" />
+                    <img src="../public/images/logo_6.png" alt="Logo" style="height: 120px; margin-right: 15px;" />
                     <h1>Financial Portfolio</h1>
                 </div>
 
@@ -40,9 +40,9 @@
                     <span class="gear">⚙️</span>
                 </div>
             </div>
-          </header>
+        </header>
+        
         <div class="main-content">
-
             <!-- 第一列：Quote Lookup + Gainers + Losers + 图片 -->
             <div class="third-column">
                 <!-- 搜索输入框 -->
@@ -90,7 +90,7 @@
 
                 <!-- 广告位图片 -->
                 <section id="bottom-image">
-                    <img src="ad_pic.png" alt="Bottom Logo" />
+                    <img src="../public/images/ad_pic.png" alt="Bottom Logo" />
                 </section>
             </div>
 
@@ -98,7 +98,7 @@
             <div class="center-column" style="display: flex; flex-direction: column; gap: 15px;">
                 <section id="net-worth">
                     <h2>Net Worth</h2>
-                    <canvas id="net-worth-chart"></canvas> <!-- 趋势图 -->
+                    <canvas id="net-worth-chart"></canvas>
                 </section>
 
                 <section id="holdings" class="holdings">
@@ -131,20 +131,16 @@
 
             <!-- 右侧：Asset Overview 和 FAQ -->
             <div class="right-column">
-                <!-- 修改！！！ -->
-                <section class="asset-overview"  style="height: 323px; margin-bottom: 2px;">
+                <section class="asset-overview" style="height: 323px; margin-bottom: 2px;">
                     <h2>Asset Overview</h2>
                     <div class="overview-grid">
-
                     </div>
                 </section>
-
 
                 <!-- FAQ部分 -->
                 <section class="faq">
                     <h2 class="faq_title">Frequently Asked Questions</h2>
                     <div class="faq-list">
-
                         <div class="faq-item">
                             <div class="question">
                                 What is a financial portfolio?
@@ -207,7 +203,8 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>
