@@ -1,34 +1,45 @@
 export function initHoldingsTable() {
+    const select = document.getElementById('asset-select');
     const tbody = document.querySelector('#data-table tbody');
-    tbody.innerHTML = '';
 
-    fetch(`../../src/api/holdings.json`)
+    let allData = [];
+
+    // 加载 JSON 数据，只执行一次
+    fetch('../../src/api/holdings.json')
         .then(response => response.json())
         .then(data => {
-            const holdingsData = data.filter(item => item.type === 'stock');
-            holdingsData.forEach(item => {
-                const tr = document.createElement('tr');
-                const changeClass = item.charge >= 0 ? 'positive' : 'negative';
-                tr.innerHTML = `
-                  <td>${item.name}</td>
-                  <td>${item.b_price.toFixed(2)}</td>
-                  <td>${item.c_price.toFixed(2)}</td>
-                  <td class="${changeClass}">${item.charge.toFixed(2)}%</td>
-                  <td>${item.total}</td>
-                  <td>${item.time}</td>
-              `;
-                tbody.appendChild(tr);
-            });
+            allData = data;
+            renderTable('stock'); // 默认显示 stock
         })
-        .catch(error => {
-            console.error('Error loading holdings data:', error);
+        .catch(err => {
+            console.error('Error loading holdings data:', err);
         });
 
-    const select = document.getElementById('asset-select');
+    // 添加下拉选择监听
     if (select) {
         select.addEventListener('change', () => {
-            const type = select.value;
-            updateHoldingsTable(type);
+            const selectedType = select.value;
+            renderTable(selectedType);
+        });
+    }
+
+    // 渲染表格函数
+    function renderTable(type) {
+        const filtered = allData.filter(item => item.type === type);
+        tbody.innerHTML = ''; // 清空表格
+
+        filtered.forEach(item => {
+            const tr = document.createElement('tr');
+            const changeClass = item.charge >= 0 ? 'positive' : 'negative';
+            tr.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.b_price.toFixed(2)}</td>
+                <td>${item.c_price.toFixed(2)}</td>
+                <td class="${changeClass}">${item.charge.toFixed(2)}%</td>
+                <td>${item.total}</td>
+                <td>${item.time}</td>
+            `;
+            tbody.appendChild(tr);
         });
     }
 }
