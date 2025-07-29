@@ -36,7 +36,7 @@
 
 /* 🌌 默认暗色模式背景图 */
 body {
-  background-image: url('../../public/images/wallpaper7.jpg');
+  background-image: url('../../public/images/stars.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,6 +53,7 @@ body {
 }
 
 header {
+  border: 0.5px solid white;
   border-radius: 20px;
   text-align: center;
   padding: 5px;
@@ -101,6 +102,8 @@ header {
     box-shadow: 0 0 20px rgba(0, 123, 255, 1);
   }
 }
+
+
 
 
 /* 图标区域样式 */
@@ -188,6 +191,7 @@ h2 {
   font-size: 16px;
   outline: none;
   height: 42px;
+  animation: glow 1s infinite alternate;
 }
 
 #quote-lookup input::placeholder {
@@ -203,6 +207,7 @@ h2 {
     border-radius: 20px;
     padding: 15px;
     margin-bottom: 20px;
+    border: 0.5px solid white;
     background-color: rgb(34, 73, 119, 0.4);
     backdrop-filter: blur(3px);
   }
@@ -245,8 +250,9 @@ h2 {
 
 #top-gainers th,
 #top-losers th {
-    background: linear-gradient(to bottom, rgb(2, 25, 68), rgba(255, 255, 255, 0));
-    /* background-color: rgb(255, 248, 237); */
+    /* background: linear-gradient(to bottom, rgb(2, 25, 68), rgba(255, 255, 255, 0)); */
+    background-color: rgb(2, 25, 68);
+    backdrop-filter: blur(3px);
     font-weight: bold;
 }
 
@@ -272,12 +278,13 @@ h2 {
 /* Net Worth 趋势图 */
 #net-worth {
   margin-top: 20px;
+  border: 0.5px solid white;
   background-color: rgba(34, 73, 119, 0.4);
   backdrop-filter: blur(3px);
   padding: 20px;
   color: transparent; /* 让文字内部透明 */
   -webkit-text-stroke: 0.7px white; /* 添加白色描边 */
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -291,6 +298,7 @@ h2 {
   background-color: rgba(34, 73, 119, 0.4);
   backdrop-filter: blur(3px);
   color: white;
+  border: 0.5px solid white;
   border-radius: 15px;
   padding: 20px;
   margin-top: 15px;
@@ -360,6 +368,7 @@ h2 {
 /* Asset Overview修改！！！ */
 .asset-overview {
   margin-top: 20px;
+  border: 0.5px solid white;
   background-color: rgba(34, 73, 119, 0.4);
   backdrop-filter: blur(3px);
   border-radius: 15px;
@@ -382,6 +391,7 @@ h2 {
 }
 
 .asset {
+  border: 0.5px solid white;
   background-color: rgba(142, 142, 142, 0.3);
   border-radius: 10px;
   padding: 20px;
@@ -428,6 +438,7 @@ h2 {
 .faq {
   background-color: rgba(34, 73, 119, 0.4);
   backdrop-filter: blur(3px);
+  border: 0.5px solid white;
   color: white;
   border-radius: 15px;
   padding: 20px;
@@ -473,7 +484,7 @@ h2 {
 }
 
 .faq-item.active .answer {
-  background-image: url("../small_logo.png");
+  background-image: url("../../public/images/slogo.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: 100px;
@@ -550,11 +561,19 @@ h2 {
     margin-top: 0;
 }
 
+
+
 /* 主题色切换 */
 /* 🌗 主题切换支持：浅色模式样式（基于 .light-theme） */
 body.light-theme {
-  background-color: #f5f5f5;
-  color: #222;
+  background-image: url('../../public/images/white.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 20px;
+  /* background-color: #f5f5f5;
+  color: #222; */
 }
 
 body.light-theme header,
