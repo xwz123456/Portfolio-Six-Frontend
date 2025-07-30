@@ -12,10 +12,10 @@ export function initOverview() {
                 const assetDiv = document.createElement('div');
                 assetDiv.className = 'asset';
                 assetDiv.dataset.type = item.asset_type;
-
+                const changeColor = item.change > 0 ? 'red' : 'green';
                 assetDiv.innerHTML = `
                   ${item.asset_type.toUpperCase()}
-                  <div class="value">${item.change > 0 ? '+' : ''}${item.change}%</div>
+                  <div class="value" style="color: ${changeColor};">${item.change > 0 ? '+' : ''}${item.change}%</div>
                   <div class="total_value">$${item.total_profit.toFixed(2)}</div>
               `;
                 overviewGrid.appendChild(assetDiv);
