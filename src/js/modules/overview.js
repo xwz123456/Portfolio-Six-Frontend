@@ -1,36 +1,3 @@
-// import API_CONFIG from '../../config/apiConfig.js';
-// export function initOverview() {
-//     const overviewGrid = document.querySelector('.overview-grid');
-//     overviewGrid.innerHTML = '';
-
-//     fetch(`${API_CONFIG.baseUrl}/api/assets/rate/1`)
-//         .then(response => response.json())
-//         .then(response => {
-//             // 从 response.data 中获取数据
-//             const data = response.data;
-//             data.forEach(item => {
-//                 const assetDiv = document.createElement('div');
-//                 assetDiv.className = 'asset';
-//                 assetDiv.dataset.type = item.asset_type;
-//                 const changeColor = item.change > 0 ? 'red' : 'green';
-//                 assetDiv.innerHTML = `
-//                   ${item.asset_type.toUpperCase()}
-//                   <div class="value" style="color: ${changeColor};">${item.change > 0 ? '+' : ''}${item.change}%</div>
-//                   <div class="total_value">$${item.total_profit.toFixed(2)}</div>
-//               `;
-//                 overviewGrid.appendChild(assetDiv);
-//             });
-//         })
-//         .catch(error => {
-//             console.error('Error loading asset overview data:', error);
-//         });
-// }
-
-
-
-
-
-
 import API_CONFIG from '../../config/apiConfig.js';
 
 let pieChartInstance = null;
@@ -42,7 +9,7 @@ export function initOverview() {
 
     overviewGrid.innerHTML = '';
     pieCanvas.style.display = "none";
-    toggleBtn.textContent = "Show Pie Chart";
+    toggleBtn.textContent = "Pie Chart";
 
     fetch(`${API_CONFIG.baseUrl}/api/assets/rate/1`)
         .then(response => response.json())
@@ -74,7 +41,7 @@ export function initOverview() {
                 if (pieCanvas.style.display === "none") {
                     pieCanvas.style.display = "block";
                     overviewGrid.style.display = "none";
-                    toggleBtn.textContent = "Show Overview";
+                    toggleBtn.textContent = "Overview";
 
                     // 如果之前画过，销毁避免重复叠加
                     if (pieChartInstance) pieChartInstance.destroy();
@@ -111,7 +78,7 @@ export function initOverview() {
                 } else {
                     pieCanvas.style.display = "none";
                     overviewGrid.style.display = "grid";
-                    toggleBtn.textContent = "Show Pie Chart";
+                    toggleBtn.textContent = "Pie Chart";
                 }
             };
         })
