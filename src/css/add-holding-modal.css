@@ -1,0 +1,166 @@
+#add-holding-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: modal-glow 2s infinite alternate;
+  width: 400px;
+}
+
+#add-holding-modal h3 {
+  margin-bottom: 20px; /* Add spacing between title and first label */
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#add-holding-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1px; /* Reduced spacing between form elements */
+}
+
+#add-holding-modal form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #333;
+  gap: 10px; /* Add spacing between label and input */
+}
+
+#add-holding-modal form input,
+#add-holding-modal select {
+  flex: 1;
+  padding: 10px 15px;
+  border: none; /* Remove all borders */
+  border-bottom: 2px solid #ccc; /* Add only a bottom border */
+  border-radius: 0; /* Remove border radius */
+  font-size: 0.9rem;
+  background: transparent; /* Transparent background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Ensure uniform width */
+  box-sizing: border-box; /* Include padding and border in width */
+  color: #1b6b83;
+}
+
+#add-holding-modal form input:focus,
+#add-holding-modal select:focus {
+  border-bottom-color: rgba(0, 123, 255, 0.7); /* Highlight only the bottom border on focus */
+  outline: none;
+  box-shadow: 0 1px 5px rgba(0, 123, 255, 0.5); /* Add subtle shadow */
+}
+
+#add-holding-modal button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(0, 123, 255, 0.7); /* Semi-transparent button */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: button-glow 2s infinite alternate;
+}
+
+#add-holding-modal button:hover {
+  background: rgba(0, 123, 255, 0.9);
+  transform: scale(1.05);
+}
+
+#add-holding-modal button[type="submit"] {
+  background: rgba(0, 200, 0, 0.7); /* Green button */
+  animation: button-glow-green 2s infinite alternate;
+}
+
+#add-holding-modal button[type="submit"]:hover {
+  background: rgba(0, 200, 0, 0.9);
+}
+
+#add-holding-modal button#close-modal {
+  background: rgba(200, 0, 0, 0.7); /* Red button */
+  animation: button-glow-red 2s infinite alternate;
+}
+
+#add-holding-modal button#close-modal:hover {
+  background: rgba(200, 0, 0, 0.9);
+}
+
+/* Breathing glow effect for green button */
+@keyframes button-glow-green {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 200, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 200, 0, 0.8);
+  }
+}
+
+/* Breathing glow effect for red button */
+@keyframes button-glow-red {
+  0% {
+    box-shadow: 0 0 10px rgba(200, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(200, 0, 0, 0.8);
+  }
+}
+
+/* Breathing glow effect for modal */
+@keyframes modal-glow {
+  0% {
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 25px rgba(0, 123, 255, 0.6);
+  }
+}
+
+.icons button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(0, 123, 255, 0.7); /* Semi-transparent button */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: button-glow 2s infinite alternate;
+  }
+  
+  .icons button:hover {
+    background: rgba(0, 123, 255, 0.9);
+    transform: scale(1.05);
+  }
+
+#add-holding-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(0, 123, 255, 0.7); /* Semi-transparent button */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: button-glow 2s infinite alternate;
+}
+
+#add-holding-btn:hover {
+  background: rgba(0, 123, 255, 0.9);
+  transform: scale(1.05);
+}
+
+/* Breathing glow effect for buttons */
+@keyframes button-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+  }
+}

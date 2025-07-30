@@ -121,20 +121,6 @@ header {
   border: none;
 }
 
-.icons button {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  color: #ccc;
-  background-color: rgba(0, 35, 61, 0.05);
-  backdrop-filter: blur(3px);
-  transition: background-color 0.3s ease;
-}
-
-.icons button:hover {
-  background-color: #ddd;
-}
-
 .user {
   color: #ffffff;
 }
