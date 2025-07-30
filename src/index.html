@@ -135,9 +135,12 @@
             <!-- 右侧：Asset Overview 和 FAQ -->
             <div class="right-column">
                 <section class="asset-overview" style="height: 323px; margin-bottom: 2px;">
-                    <h2>Asset Overview</h2>
-                    <div class="overview-grid">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2>Asset Overview</h2>
+                        <button id="toggle-pie" class="pie-btn">Show Pie chart</button>
                     </div>
+                    <div class="overview-grid"></div>
+                    <canvas id="asset-pie-chart" style="display: none; height:250px"></canvas>
                 </section>
 
                 <!-- FAQ部分 -->
