@@ -364,7 +364,19 @@ h2 {
   color: red;
 }
 
-/* Asset Overview */
+
+.asset-overview {
+  margin-top: 20px;
+  border: 0.5px solid white;
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  height: 323px;
+  box-sizing: border-box;
+}
+
 /* 标题变小 */
 .asset-overview h2 {
   text-align: center;
@@ -390,11 +402,19 @@ h2 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+#asset-pie-chart {
+  width: 240px;   /* 控制饼图宽度 */
+  height: 240px;  /* 控制饼图高度 */
+  margin: 20px auto; /* 居中 + 上下间距 */
+  display: block; /* 确保居中有效 */
+}
+
 body.light-theme .pie-btn {
   background-color: #ddd;
   color: #00233d;
   border: 1px solid #333;
 }
+
 
 .overview-grid {
   display: grid;
@@ -403,6 +423,7 @@ body.light-theme .pie-btn {
   margin-top: 12px;
   height: calc(100% - 48px); /* 剩余高度用于容纳4个卡片 */
 }
+
 
 .asset {
   border: 0.5px solid white;
@@ -448,6 +469,8 @@ body.light-theme .pie-btn {
 .asset[data-type="bond"] .value {
   color: #2ecc71;
 }
+
+
 
 /* FAQ 样式 */
 .faq {

@@ -59,10 +59,10 @@ export function initOverview() {
                                     totals.crypto
                                 ],
                                 backgroundColor: [
-                                    '#3498db', // 蓝
-                                    '#2ecc71', // 绿
-                                    '#f1c40f', // 黄
-                                    '#e74c3c'  // 红
+                                    'rgba(255, 155, 213)', // pink 半透明
+                                    'rgba(47, 98, 55)',    // green 半透明
+                                    'rgba(255, 173, 72)',  // yellow 半透明
+                                    'rgba(52, 152, 219)'   // blue 半透明
                                 ]
                             }]
                         },
@@ -70,7 +70,16 @@ export function initOverview() {
                             responsive: true,
                             plugins: {
                                 legend: {
-                                    position: 'bottom'
+                                    position: 'bottom',
+                                    align : 'end',
+                                    labels:{
+                                        boxWidth: 15,
+                                        padding: 10,
+                                        font:{
+                                            size: 8
+                                        }
+                                    }
+
                                 }
                             }
                         }
