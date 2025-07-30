@@ -26,7 +26,6 @@ export function initHoldingsTable() {
   
     // 渲染表格函数
     function renderTable(type) {
-      // 修改: 过滤条件使用 asset_type 字段
       const filtered = type === 'all'
         ? allData
         : allData.filter(item => item.asset_type === type);
@@ -54,4 +53,84 @@ export function initHoldingsTable() {
         tbody.appendChild(tr);
       });
     }
-  }
+
+    // Add button functionality
+    const addButton = document.getElementById('add-holding-btn');
+    const modal = document.getElementById('add-holding-modal');
+    const modalForm = document.getElementById('add-holding-form');
+    const closeModal = document.getElementById('close-modal');
+
+    if (addButton) {
+      addButton.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+    }
+
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    if (modalForm) {
+        modalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(modalForm);
+            const data = Object.fromEntries(formData.entries());
+
+            // Validate fields
+            const requiredFields = ['userID', 'asset_type', 'asset_code', 'asset_name', 'quantity', 'purchase_price', 'current_price', 'purchase_date'];
+            for (const field of requiredFields) {
+                if (!data[field]) {
+                    alert(`${field} cannot be empty`);
+                    return;
+                }
+            }
+
+            // Construct payload
+            const payload = {
+                metadata: {
+                    timestamp: new Date().toISOString(),
+                    version: '1.0',
+                    source: 'web-ui'
+                },
+                request: {
+                    action: 'add_holding',
+                    parameters: data // 原始数据
+                }
+            };
+
+            // Debug: Log the payload being sent to the server
+            console.log('Payload being sent to the server:', payload);
+
+            // Send data to server
+            fetch(`${API_CONFIG.baseUrl}/api/assets/add`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error('Failed to add holding');
+                    return response.json();
+                })
+                .then(() => {
+                    alert('Holding added successfully');
+                    modal.style.display = 'none';
+                    modalForm.reset();
+                    initHoldingsTable(); // Refresh the table
+                })
+                .catch(err => {
+                    console.error('Error adding holding:', err);
+                    alert('Error adding holding');
+                });
+        });
+    }
+
+    // Set default value for datetime-local input
+    const purchaseDateInput = document.querySelector('input[name="purchase_date"]');
+    if (purchaseDateInput) {
+        const now = new Date();
+        const formattedDate = now.toISOString().slice(0, 16); // Format as yyyy-MM-ddTHH:mm
+        purchaseDateInput.value = formattedDate;
+    }
+}
