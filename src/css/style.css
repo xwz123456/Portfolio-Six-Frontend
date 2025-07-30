@@ -384,6 +384,29 @@ h2 {
   margin-bottom: 15px;
 }
 
+.pie-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: rgba(0, 35, 61, 0.1);
+  backdrop-filter: blur(3px);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pie-btn:hover {
+  background-color: rgba(0, 123, 255, 0.6);
+}
+
+
+
+body.light-theme .pie-btn {
+  background-color: #ddd;
+  color: #00233d;
+  border: 1px solid #333;
+}
+
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
