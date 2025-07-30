@@ -210,18 +210,22 @@
         </div>
 
         <section id="stock-trend" class="stock-trend">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h2>Stock Market Trends</h2>
-                <select id="stock-select">
-                    <option value="AAPL">Apple (AAPL)</option>
-                    <option value="TSLA">Tesla (TSLA)</option>
-                    <option value="AMZN">Amazon (AMZN)</option>
-                    <option value="MSFT">Microsoft (MSFT)</option>
-                </select>
+            <div class="trend-header">
+              <h2>Stock Market Trends</h2>
+              <select id="stock-select">
+                <option value="AAPL">Apple (AAPL)</option>
+                <option value="TSLA">Tesla (TSLA)</option>
+                <option value="AMZN">Amazon (AMZN)</option>
+                <option value="MSFT">Microsoft (MSFT)</option>
+                <option value="GOOGL">Google (GOOGL)</option>
+                <option value="META">Meta (META)</option>
+                <option value="NVDA">Nvidia (NVDA)</option>
+              </select>
             </div>
+          
+            <div id="market-status"></div>
             <canvas id="stock-trend-chart"></canvas>
-        </section>
-
+          </section>
     </div>
     
 

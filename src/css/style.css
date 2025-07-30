@@ -659,6 +659,35 @@ body.light-theme #stock-select {
   border: 1px solid black;
 }
 
+.trend-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 从左到右排布 */
+  gap: 15px; /* 标题和选择框的间距 */
+  margin-bottom: 10px;
+}
+
+.trend-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: transparent;
+  -webkit-text-stroke: 0.7px white;
+}
+
+body.light-theme .trend-header h2 {
+  -webkit-text-stroke: 0.7px black;
+}
+
+
+#market-status {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+body.light-theme #market-status {
+  color: black;
+}
+
 
 /* 🌞 Light Theme 样式 */
 body.light-theme #stock-trend {
