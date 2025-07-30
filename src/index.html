@@ -42,7 +42,7 @@
                 </div>
             </div>
         </header>
-        
+
         <div class="main-content">
             <!-- 第一列：Quote Lookup + Gainers + Losers + 图片 -->
             <div class="third-column">
@@ -162,9 +162,12 @@
             <!-- 右侧：Asset Overview 和 FAQ -->
             <div class="right-column">
                 <section class="asset-overview" style="height: 323px; margin-bottom: 2px;">
-                    <h2>Asset Overview</h2>
-                    <div class="overview-grid">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2>Asset Overview</h2>
+                        <button id="toggle-pie" class="pie-btn">Pie Chart</button>
                     </div>
+                    <div class="overview-grid"></div>
+                    <canvas id="asset-pie-chart" style="display: none; height:250px"></canvas>
                 </section>
 
                 <!-- FAQ部分 -->
@@ -232,8 +235,29 @@
                 </section>
             </div>
         </div>
+
+        <section id="stock-trend" class="stock-trend">
+            <div class="trend-header">
+              <h2>Stock Market Trends</h2>
+              <select id="stock-select">
+                <option value="AAPL">Apple (AAPL)</option>
+                <option value="TSLA">Tesla (TSLA)</option>
+                <option value="AMZN">Amazon (AMZN)</option>
+                <option value="MSFT">Microsoft (MSFT)</option>
+                <option value="GOOGL">Google (GOOGL)</option>
+                <option value="META">Meta (META)</option>
+                <option value="NVDA">Nvidia (NVDA)</option>
+              </select>
+            </div>
+          
+            <div id="market-status"></div>
+            <canvas id="stock-trend-chart"></canvas>
+          </section>
     </div>
         <script type="module" src="./js/script.js"></script>
+    
+
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>

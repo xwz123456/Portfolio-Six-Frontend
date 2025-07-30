@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/xwz123456/Portfolio-Six-Frontend/issues"
   },
-  "homepage": "https://github.com/xwz123456/Portfolio-Six-Frontend#readme"
+  "homepage": "https://github.com/xwz123456/Portfolio-Six-Frontend#readme",
+  "dependencies": {
+    "chart.js": "^4.5.0",
+    "yahoo-finance2": "^2.13.3"
+  }
 }

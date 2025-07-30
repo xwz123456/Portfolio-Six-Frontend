@@ -350,62 +350,100 @@ h2 {
   color: red;
 }
 
-/* Asset Overview */
-/* Asset Overview修改！！！ */
+
 .asset-overview {
   margin-top: 20px;
   border: 0.5px solid white;
   background-color: rgba(34, 73, 119, 0.4);
   backdrop-filter: blur(3px);
   border-radius: 15px;
-  padding: 20px;
+  padding: 12px 16px;
   margin-bottom: 15px;
+  height: 323px;
+  box-sizing: border-box;
 }
 
+/* 标题变小 */
 .asset-overview h2 {
   text-align: center;
-  font-size: 22px;
-  color: transparent; /* 让文字内部透明 */
-  -webkit-text-stroke: 0.7px white; /* 添加白色描边 */
-  margin-bottom: 15px;
+  font-size: 18px;
+  color: transparent;
+  -webkit-text-stroke: 0.6px white;
+  margin: 0;
 }
+
+/* 按钮变小 */
+.pie-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pie-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#asset-pie-chart {
+  width: 240px;   /* 控制饼图宽度 */
+  height: 240px;  /* 控制饼图高度 */
+  margin: 20px auto; /* 居中 + 上下间距 */
+  display: block; /* 确保居中有效 */
+}
+
+body.light-theme .pie-btn {
+  background-color: #ddd;
+  color: #00233d;
+  border: 1px solid #333;
+}
+
 
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 10px;
+  margin-top: 12px;
+  height: calc(100% - 48px); /* 剩余高度用于容纳4个卡片 */
 }
+
 
 .asset {
   border: 0.5px solid white;
   background-color: rgba(142, 142, 142, 0.3);
   border-radius: 10px;
-  padding: 20px;
+  padding: 12px;
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   color: #ffffff;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .asset:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .asset .value {
-  font-size: 18px;
-  margin-top: 8px;
+  font-size: 14px;
+  margin-top: 6px;
   font-weight: normal;
-  color: #2ecc71;
 }
 
 .asset .total_value {
-  font-size: 18px;
-  margin-top: 8px;
+  font-size: 14px;
+  margin-top: 6px;
   font-weight: normal;
   color: #71faff;
 }
+
 
 /* 根据资产类型显示不同颜色（可选增强） */
 .asset[data-type="crypto"] .value {
@@ -546,6 +584,120 @@ h2 {
 .scrollable-table tbody tr:first-child {
     margin-top: 0;
 }
+
+
+/* 股票加上了股票！！！ */
+#stock-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: rgba(0, 145, 255, 0.2);
+  color: white;
+  border: 1px solid #ccc;
+  backdrop-filter: blur(4px);
+}
+
+
+
+
+/* Stock Trend 区块样式 */
+#stock-trend {
+  margin-top: 30px;
+  border: 0.5px solid white;
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 1200px; /* 与 dashboard 宽度一致 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#stock-trend h2 {
+  text-align: center;
+  font-size: 24px;
+  color: transparent;
+  -webkit-text-stroke: 0.7px white; /* 暗色模式标题描边 */
+  margin-bottom: 20px;
+}
+
+#stock-trend select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: rgba(0, 35, 61, 0.2);
+  color: white;
+  border: 1px solid #ccc;
+  backdrop-filter: blur(4px);
+}
+
+#stock-trend canvas {
+  width: 100%;
+  height: 400px;
+}
+
+
+body.light-theme #stock-select {
+  background-color: rgba(220, 220, 220, 0.5);
+  color: black;
+  border: 1px solid black;
+}
+
+.trend-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 从左到右排布 */
+  gap: 15px; /* 标题和选择框的间距 */
+  margin-bottom: 10px;
+}
+
+.trend-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: transparent;
+  -webkit-text-stroke: 0.7px white;
+}
+
+body.light-theme .trend-header h2 {
+  -webkit-text-stroke: 0.7px black;
+}
+
+
+#market-status {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+body.light-theme #market-status {
+  color: black;
+}
+
+
+/* 🌞 Light Theme 样式 */
+body.light-theme #stock-trend {
+  background-color: rgba(216, 236, 251, 0.5);
+  backdrop-filter: blur(5px);
+  border: 0.5px solid black;
+}
+
+body.light-theme #stock-trend h2 {
+  color: transparent;
+  -webkit-text-stroke: 0.7px black;
+}
+
+body.light-theme #stock-trend select {
+  background-color: rgba(220, 220, 220, 0.5);
+  color: black;
+  border: 1px solid black;
+}
+
+/* Light-theme 下 Chart.js 的字体颜色覆盖 */
+body.light-theme #stock-trend canvas {
+  color: black !important;
+}
+
 
 
 
