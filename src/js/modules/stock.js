@@ -1,6 +1,7 @@
 export function initStockChart() {
     const ctxStock = document.getElementById('stock-trend-chart');
     const stockSelect = document.getElementById('stock-select');
+    const statusEl = document.getElementById('market-status');
     if (!ctxStock || !stockSelect) return;
   
     let stockTrendChart = new Chart(ctxStock.getContext('2d'), {
@@ -39,6 +40,39 @@ export function initStockChart() {
       }
     });
   
+
+     // 判断美股是否开盘（美东时间）
+  function isMarketOpen() {
+    const now = new Date();
+    const utcOffset = now.getTimezoneOffset(); // 本地与 UTC 的分钟差
+    const estOffset = 300; // 美东比 UTC 慢 5 小时
+    const estNow = new Date(now.getTime() + (utcOffset - estOffset) * 60000);
+
+    const day = estNow.getDay(); // 0=周日,1=周一...
+    const hours = estNow.getHours();
+    const minutes = estNow.getMinutes();
+
+    // 周一到周五
+    if (day === 0 || day === 6) return false;
+
+    // 9:30 - 16:00
+    if (hours < 9 || hours > 16) return false;
+    if (hours === 9 && minutes < 30) return false;
+
+    return true;
+  }
+
+  // 更新 Market Status 提示
+  function updateStatus() {
+    if (isMarketOpen()) {
+      statusEl.textContent = "Market Open ✅";
+      statusEl.style.color = "lightgreen";
+    } else {
+      statusEl.textContent = "Market Closed ❌";
+      statusEl.style.color = "red";
+    }
+  }
+
 
     async function updateChart(symbol) {
         try {
@@ -104,6 +138,14 @@ export function initStockChart() {
         setTimeout(applyTheme, 100); // 切换完成后刷新图表样式
       });
     stockSelect.addEventListener('change', e => updateChart(e.target.value));
-    setInterval(() => updateChart(stockSelect.value), 60000); // 每分钟刷新一次
+      // 自动刷新：仅在开盘时
+        setInterval(() => {
+            if (isMarketOpen()) {
+            updateChart(stockSelect.value);
+            } else {
+            updateStatus();
+            }
+        }, 60000);
+
     updateChart('AAPL');
   }
