@@ -41,7 +41,7 @@
                 </div>
             </div>
         </header>
-        
+
         <div class="main-content">
             <!-- 第一列：Quote Lookup + Gainers + Losers + 图片 -->
             <div class="third-column">
@@ -208,8 +208,23 @@
                 </section>
             </div>
         </div>
+
+        <section id="stock-trend" class="stock-trend">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Stock Market Trends</h2>
+                <select id="stock-select">
+                    <option value="AAPL">Apple (AAPL)</option>
+                    <option value="TSLA">Tesla (TSLA)</option>
+                    <option value="AMZN">Amazon (AMZN)</option>
+                    <option value="MSFT">Microsoft (MSFT)</option>
+                </select>
+            </div>
+            <canvas id="stock-trend-chart"></canvas>
+        </section>
+
     </div>
     
+
     <script type="module" src="./js/script.js"></script>
 </body>
 

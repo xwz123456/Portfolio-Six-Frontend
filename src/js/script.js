@@ -6,6 +6,7 @@ import { initCharts } from './modules/charts.js';
 import { initTopLists } from './modules/toplists.js';
 import { initFAQ } from './modules/faq.js';
 import { initThemeToggle } from './modules/theme.js';
+import { initStockChart } from './modules/stock.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
     initSplash();
@@ -20,4 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initTopLists();
     initFAQ();
     initThemeToggle();
+    initStockChart(); 
 });
