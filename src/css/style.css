@@ -365,8 +365,8 @@ h2 {
 }
 
 /* Asset Overview */
-/* Asset Overview修改！！！ */
-.asset-overview {
+
+/* .asset-overview {
   margin-top: 20px;
   border: 0.5px solid white;
   background-color: rgba(34, 73, 119, 0.4);
@@ -379,8 +379,8 @@ h2 {
 .asset-overview h2 {
   text-align: center;
   font-size: 22px;
-  color: transparent; /* 让文字内部透明 */
-  -webkit-text-stroke: 0.7px white; /* 添加白色描边 */
+  color: transparent;
+  -webkit-text-stroke: 0.7px white; 
   margin-bottom: 15px;
 }
 
@@ -397,9 +397,44 @@ h2 {
 
 .pie-btn:hover {
   background-color: rgba(0, 123, 255, 0.6);
+} */
+
+.asset-overview {
+  margin-top: 20px;
+  border: 0.5px solid white;
+  background-color: rgba(34, 73, 119, 0.4);
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  height: 323px;
+  box-sizing: border-box;
 }
 
+/* 标题变小 */
+.asset-overview h2 {
+  text-align: center;
+  font-size: 18px;
+  color: transparent;
+  -webkit-text-stroke: 0.6px white;
+  margin: 0;
+}
 
+/* 按钮变小 */
+.pie-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pie-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 body.light-theme .pie-btn {
   background-color: #ddd;
@@ -407,13 +442,20 @@ body.light-theme .pie-btn {
   border: 1px solid #333;
 }
 
-.overview-grid {
+/* .overview-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+} */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+  height: calc(100% - 48px); /* 剩余高度用于容纳4个卡片 */
 }
 
-.asset {
+/* .asset {
   border: 0.5px solid white;
   background-color: rgba(142, 142, 142, 0.3);
   border-radius: 10px;
@@ -442,7 +484,41 @@ body.light-theme .pie-btn {
   margin-top: 8px;
   font-weight: normal;
   color: #71faff;
+} */
+
+.asset {
+  border: 0.5px solid white;
+  background-color: rgba(142, 142, 142, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.asset:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.asset .value {
+  font-size: 14px;
+  margin-top: 6px;
+  font-weight: normal;
+}
+
+.asset .total_value {
+  font-size: 14px;
+  margin-top: 6px;
+  font-weight: normal;
+  color: #71faff;
+}
+
 
 /* 根据资产类型显示不同颜色（可选增强） */
 .asset[data-type="crypto"] .value {
