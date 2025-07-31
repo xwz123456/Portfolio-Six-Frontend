@@ -242,9 +242,31 @@ h2 {
     font-weight: bold;
 }
 
+.main-content {
+  display: flex;
+  gap: 15px;
+  align-items: stretch; /* 三列等高 */
+}
+
+/* 左边 third-column 高度跟中间对齐 */
+.third-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 两个框之间的间距 */
+  flex: 1; 
+}
+
+/* Top Gainers 和 Top Losers 平分高度 */
+#top-gainers,
+#top-losers {
+  flex: 1; /* 平分父容器 */
+  display: flex;
+  flex-direction: column;
+}
 
 
-/* 广告位图片 */
+
+/* 广告位图片
 #bottom-image {
   margin-top: 20px;
   text-align: center;
@@ -252,13 +274,12 @@ h2 {
 
 #bottom-image img {
   width: 300px;
-  /* 固定宽度 */
   height: auto;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+} */
 
 
 /* Net Worth 趋势图 */
@@ -288,7 +309,7 @@ h2 {
   border-radius: 15px;
   padding: 20px;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -322,7 +343,7 @@ h2 {
 
 /* 修复后的滚动表格样式 */
 .scroll-container {
-  max-height: 320px;   
+  max-height: 430px;   
   overflow-y: auto;
   overflow-x: hidden;
   margin-top: 10px;
@@ -343,11 +364,11 @@ h2 {
 
 /* 可选：为正负变化添加颜色 */
 .positive {
-  color: lightgreen;
+  color: #ff0000;
 }
 
 .negative {
-  color: red;
+  color: #90ee90;
 }
 
 
@@ -562,10 +583,14 @@ body.light-theme .pie-btn {
   height: auto;
 }
 
+
+
+
+
 /* 添加滚动表格样式 */
 .scrollable-table {
-    height: 150px; /* 固定高度 */
-    overflow-y: hidden; /* 隐藏垂直滚动条 */
+    height: 300px; 
+    overflow-y: hidden; 
     position: relative;
 }
 
