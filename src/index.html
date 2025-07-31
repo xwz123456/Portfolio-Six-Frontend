@@ -12,6 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/add-holding-modal.css" />
+    <link rel="stylesheet" href="./css/delete-confirm-modal.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -126,6 +127,7 @@
                                     <th>Change (%)</th>
                                     <th>Total Value</th>
                                     <th>Time</th>
+                                    <th style="width: 100px;">Action</th> <!-- Ensure enough space for delete button -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -156,6 +158,13 @@
                         <button type="submit">Submit</button>
                         <button type="button" id="close-modal">Cancel</button>
                     </form>
+                </div>
+
+                <!-- Modal for delete confirmation -->
+                <div id="delete-confirm-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
+                    <p>Are you sure you want to delete this holding?</p>
+                    <button id="confirm-delete-btn" style="margin-right: 10px;">Confirm</button>
+                    <button id="cancel-delete-btn">Cancel</button>
                 </div>
             </div>
 
@@ -255,9 +264,6 @@
           </section>
     </div>
         <script type="module" src="./js/script.js"></script>
-    
-
-    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>

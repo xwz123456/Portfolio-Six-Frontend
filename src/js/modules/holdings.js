@@ -49,9 +49,54 @@ export function initHoldingsTable() {
           <td class="${changeClass}">${change.toFixed(2)}%</td>
           <td>${currentValue.toFixed(2)}</td>
           <td>${formattedDate}</td>
+          <td><button class="delete-btn" data-id="${item.id}" style="color: red;">🗑️</button></td>
         `;
         tbody.appendChild(tr);
       });
+
+      // Add event listeners for delete buttons
+      const deleteButtons = tbody.querySelectorAll('.delete-btn');
+      deleteButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          const holdingId = e.target.getAttribute('data-id');
+          showDeleteConfirmation(holdingId);
+        });
+      });
+    }
+
+    function showDeleteConfirmation(holdingId) {
+      const modal = document.getElementById('delete-confirm-modal');
+      const confirmButton = document.getElementById('confirm-delete-btn');
+      const cancelButton = document.getElementById('cancel-delete-btn');
+  
+      modal.style.display = 'block';
+  
+      confirmButton.onclick = () => {
+        modal.style.display = 'none';
+        deleteHolding(holdingId);
+      };
+  
+      cancelButton.onclick = () => {
+        modal.style.display = 'none';
+      };
+    }
+
+    function deleteHolding(holdingId) {
+      fetch(`${API_CONFIG.baseUrl}/api/assets/delete/${holdingId}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (!response.ok) throw new Error('Failed to delete holding');
+          return response.json();
+        })
+        .then(() => {
+          alert('Holding deleted successfully');
+          initHoldingsTable(); // Refresh the table
+        })
+        .catch(err => {
+          console.error('Error deleting holding:', err);
+          alert('Error deleting holding');
+        });
     }
 
     // Add button functionality

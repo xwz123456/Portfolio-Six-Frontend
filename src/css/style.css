@@ -229,9 +229,9 @@ h2 {
 #top-losers th,
 #top-gainers td,
 #top-losers td {
-  padding: 8px 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
+    padding: 8px 5px; /* Reduced horizontal padding for smaller column spacing */
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
 #top-gainers th,
@@ -826,4 +826,19 @@ body.light-theme #quote-lookup input{
   100% {
     box-shadow: 0 0 20px rgb(255, 255, 255);
   }
+}
+
+.delete-btn {
+    background-color: rgba(255, 71, 87, 0.8); /* Red background */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: rgba(214, 48, 49, 0.9); /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
